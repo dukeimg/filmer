@@ -1,0 +1,45 @@
+.navbar-default {
+  background-color: $primary_color;
+  border: none;
+  width: 100%;
+  border-radius: 0;
+  margin: 0;
+
+  .navbar-nav>li>a {
+    color: white;
+  }
+
+  .navbar-nav>li>a:hover {
+    color: $secondary_color;
+    background-color: white;
+  }
+}
+
+.nav-tabs {
+  li a{
+    color: $secondary_color;
+  }
+}
+
+.pages-navbar {
+  margin: 0;
+  background-color: $primary_color;
+  border: none;
+  height: 60px;
+
+  .nav>li>a {
+    color: #fff;
+  }
+}
+
+.landing {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 0;
+
+  .nav>li>a {
+    color: #fff !important;
+    background-color: transparent !important;
+  }
+}

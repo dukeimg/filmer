@@ -1,0 +1,180 @@
+// Place all the styles related to the films controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#loading {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+
+  &.loading-colors {
+    box-shadow: 2px 0 50px 0 #777777;
+  }
+
+  &.color-1 {
+    background-color: #f04155;
+  }
+  &.color-2 {
+    background-color: #39b8f7;
+  }
+  &.color-3 {
+    background-color: #6932d9;
+  }
+
+  .container-fluid {
+    z-index: 4;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    color: white;
+
+    h1 {
+      font-size: 5vw;
+      font-family: 'Classica Two';
+    }
+
+    h2 {
+      padding-left: 10%;
+      margin-top: -1%;
+      font-size: 2vh;
+    }
+  }
+}
+
+.editor {
+  display: flex;
+  flex-flow: column;
+  min-height: 100%;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+
+  .main {
+    flex: 1 1 auto;
+    display: flex;
+    min-height: 100%;
+
+    .tool-bar {
+      min-height: 100%;
+      min-width: 175px;
+      width: 175px;
+      background-color: #F76475;
+
+      .tools {
+
+        display: flex;
+        flex-wrap: wrap;
+
+        .tool {
+          height: 50px;
+          width: 50px;
+          margin-left: 25px;
+          margin-top: 25px;
+          background-color: #f0f0f0;
+          border: 2px solid red;
+          border-radius: 5px;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          &:active {
+            transform: scale(1.1);
+            border-color: #39b8f7;
+          }
+        }
+      }
+
+    }
+
+    .preview {
+      background-color: #d0d0d0;
+      display: flex;
+      flex: 1 1 auto;
+      justify-content: center;
+      align-items: center;
+
+      #page {
+        width: 80%;
+        background-color: white;
+      }
+    }
+  }
+
+  .actions-bar {
+    flex: 0 1 auto;
+    height: 50px;
+    width: 100%;
+    background-color: #E3142C;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    padding: 0;
+
+    .actions {
+      width: 100px;
+      text-align: center;
+      height: 100%;
+      display: flex;
+      color: white;
+      text-decoration: none;
+      vertical-align: middle;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background-color: #f04155;
+      }
+    }
+  }
+
+  .status-bar {
+    background-color: #2E2F30;
+    flex: 0 1 40px;
+  }
+}
+
+/*#object {
+  position: absolute;
+  box-sizing: border-box;
+  text-align: center;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: border 1s;
+  border: none;
+
+
+
+  &.active {
+    border: 2px dotted #39b8f7;
+    border-radius: 50%;
+  }
+}
+
+span {
+  text-wrap: none;
+  white-space: nowrap;
+}
+*/
+
+.obj {
+  background-color: #777777;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    display: block;
+  }
+}

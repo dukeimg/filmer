@@ -1,0 +1,17 @@
+.suggestion{
+  border: 1px solid $primary_color;
+  margin: 18px 0;
+  border-radius: 5px;
+  padding: 10px 20px 10px 20px;
+  min-height: 72px;
+  box-sizing: border-box;
+
+  b {
+    font-size: 1.1em;
+  }
+
+  .avatar {
+    float: left;
+    margin-right: 18px;
+  }
+}

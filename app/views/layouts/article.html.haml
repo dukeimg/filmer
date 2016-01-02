@@ -1,0 +1,9 @@
+=render('layouts/head')
+%body
+  .mdl-layout.mdl-js-layout
+    %header.mdl-layout__header.mdl-layout__header--article.mdl-layout__header--scroll
+      =render('layouts/header')
+    .ribbon
+    %main.mdl-layout__content.main--article
+      =yield
+      =render('layouts/footer')

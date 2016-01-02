@@ -1,0 +1,11 @@
+=render('layouts/head')
+%body
+  .mdl-layout.mdl-js-layout
+    %header.mdl-layout__header
+      =render('layouts/header')
+    %main.mdl-layout__content
+      %p.notice= notice
+      %p.alert= alert
+      .page-content
+        =yield
+    =render('layouts/footer')

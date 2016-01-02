@@ -3,8 +3,9 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
-# Use postgresql as the database for Active Record
-gem 'pg', '~> 0.15'
+# Use sqlite3 as the database for local and postgresql for Heroku
+gem 'sqlite3', group: :development
+gem 'pg', '0.18.1', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -16,6 +17,9 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-fileupload-rails'
+gem 'jcrop-rails-v2'
+gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -45,3 +49,13 @@ group :development do
   gem 'spring'
 end
 
+
+gem 'haml'
+gem 'font-awesome-sass'
+gem 'http_accept_language'
+
+#Heroku
+gem 'rails_12factor', group: :production
+
+gem 'breadcrumbs_on_rails'
+gem 'thin'

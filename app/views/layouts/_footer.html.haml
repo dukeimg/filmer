@@ -1,0 +1,27 @@
+%footer.mdl-mega-footer
+  .mdl-mega-footer__top-section
+    .mdl-mega-footer__left-section
+      %a.mdl-mega-footer__social-btn{:href => 'https://github.com/dukeimg/filmer'}
+        =icon('github')
+  .mdl-mega-footer__middle-section
+    .mdl-mega-footer__drop-down-section
+      %h3.mdl-mega-footer__heading= t('filmer')
+      %ul.mdl-mega-footer__link-list
+        %li
+          =link_to t('about.about'), about_path
+    .mdl-mega-footer__drop-down-section
+      %h3.mdl-mega-footer__heading= t('follow-the-author')
+      %ul.mdl-mega-footer__link-list
+        %li
+          =icon('github')
+          %a{:href => 'https://github.com/dukeimg'} GitHub
+          %li
+            =icon('linkedin')
+            %a{:href => 'https://www.linkedin.com/in/dukeimg'} LinkedIn
+          %li
+            =icon('vk')
+            %a{:href => 'https://vk.com/dukeimg'} VK
+  .mdl-mega-footer__bottom-section
+    %p.align-center
+      = t('copyright')
+      =link_to t('viktor-danilov'), '#'

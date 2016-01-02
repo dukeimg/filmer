@@ -1,0 +1,81 @@
+body {
+  color: #565a5c;
+  font-family: "Roboto" !important;
+  background: $background_color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $text_color;
+  margin: 20px 0;
+}
+
+a {
+  color: $secondary_color;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #cccccc;
+}
+
+.tagline {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+
+.logo-brand {
+  color: #ffffff;
+  text-decoration: none;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.underline {
+  padding-bottom: 15px;
+  border-bottom: 1px solid $secondary_color;
+}
+
+.panel-heading {
+  margin: 0;
+}
+
+.layout-transparent {
+  background: url('https://dl.dropboxusercontent.com/u/100656262/seattle.jpg') center / cover;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+#btn-close {
+  cursor: pointer;
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display:block;
+}
+
+.ribbon {
+  background-color: $primary_color;
+  height: 40vh;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.main--article {
+  margin-top: -35vh;
+}
+
+.content {
+  border-radius: 2px;
+  padding: 80px 56px;
+  margin-bottom: 80px;
+}
+

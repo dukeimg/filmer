@@ -1,0 +1,20 @@
+-title(t('about.about'))
+.mdl-grid
+  .mdl-cell.mdl-cell--2-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
+  .mdl-color--white.mdl-shadow--4dp.content.mdl-color-text--grey-800.mdl-cell.mdl-cell--8-col-desktop.mdl-cell--12-col-phone.mdl-cell--10-col-tablet
+    =render_breadcrumbs :separator => ' / '
+    %h3= t('about.about')
+    %h4= t('about.what')
+    %p= t('about.what-text')
+    %h4= t('about.why')
+    %p= t('about.why-text')
+    %h4= t('about.how')
+    %p= t('about.how-text')
+    %h4= t('copyrights')
+    %p
+      Icons made by
+      %a{:href => "http://www.freepik.com", :title => "Freepik"} Freepik
+      %span from
+      %a{:href => "http://www.flaticon.com",:title => "Flaticon"} www.flaticon.com
+      %span is licensed by
+      %a{:href => "http://creativecommons.org/licenses/by/3.0/", :title => "Creative Commons BY 3.0"}CC BY 3.0

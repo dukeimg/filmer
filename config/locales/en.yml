@@ -1,23 +1,76 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+
+  breadcrumbs:
+    about: 'about'
+
+  users:
+    edit-profile: "Edit profile"
+    edit-password: "Edit password"
+    edit-profile-picture: "Edit profile picture"
+    sign-in: "Sign in"
+    sign-out: "Sign out"
+    profile: "Profile"
+    forgot: "Forgot your password?"
+    username: "Username"
+    password: "Password"
+    password-again: "Enter your password again"
+    new-password: "New password"
+    current-password: "Current password"
+    sign-up: "Sign up"
+    be-number: "Become the user #"
+    what-is-your-name: "What is your name?"
+    name: "Name"
+    choose-an-username: "Choose an username"
+    email: "Email"
+    password-length: "Minimum length: "
+    symbols: " symbols"
+    we-need-current-password: "We need your current password to confirm your changes."
+    cannot-change-username: "Sorry, but according to the Site policy you cannot change username."
+    leave-empty: "Leave empty if you don't want to change your password."
+    danger-zone: "Danger zone"
+    danger-zone-warning: "If you want to delete your account click the button below. Warning! All your data will be erased. You cannot undo this action."
+    delete-my-account: "Delete my account"
+    are-you-sure: "Are you sure?"
+
+  landing:
+    intro-text: "Filmer is an open source app written using Ruby on Rails. You can checkout the the source code on "
+    learn-more: "Learn more"
+    slogan: "Create interactive photo stories and share them with friends"
+    tagline: "Collect your stories here"
+    get-started: "Get Started"
+
+  about:
+      about: "About"
+      what: "What?"
+      why: "Why?"
+      how: "How?"
+      what-text: "Filmer is an app built using Ruby on Rails for back-end and AngularJS and Material Design Lite for front-end. It's free & completely open source. You can check the source on "
+      why-text: "So why am I building? I want to try and learn how to develop a large scale web-application using Rails and improve my skills."
+      how-text: "As stated above it's a Ruby on Rails application. Frontend is developed using AngularJS and Material Design Lite. Database is SQLite for development and Postgresql for production using adapter."
+
+  pictures:
+      upload-message: "Друзьям будет проще узнать Вас, если Вы загрузите свою настоящую фотографию.
+                       Вы можете загрузить изображение в формате JPG, GIF или PNG.
+                       Если у Вас возникают проблемы с загрузкой, попробуйте выбрать фотографию меньшего размера."
+      crop-message: ""
+      choose-file: "Choose file"
+
+  warning: "Warning"
+  films: "Films"
+  follow-the-author: "Follow the author"
+  copyright: "Filmer © 2015 "
+  viktor-danilov: "Viktor Danilov"
+  Filmer: "Filmer"
+  back: "Back"
+  copyrights: "Copyrights"
+  dashboard: "Dashboard"
+  edit: "Edit"
+  save: "Save"
+  suggestions: "Suggestions"
+  suggest: "Suggest"
+  your-suggestion: "Your suggestion"
+  suggestion-example: "Example: need more kitties!"
+  send: "Send"
+  requirements: "Requirements"
+  change: "Change"
