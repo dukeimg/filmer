@@ -2,6 +2,10 @@
   =link_to t('Filmer'), root_path, :class => 'mdl-layout-title logo-brand'
   .mdl-layout-spacer
   %nav.mdl-navigation
+    -if user_signed_in?
+    -else
+      =link_to t('about.about'), about_path, :class => 'mdl-navigation__link'
+      =link_to t('users.sign-in'), new_user_session_path, :class => 'mdl-navigation__link'
 .mdl-layout__drawer
   %span.mdl-layout-title= t('Filmer')
   %nav.mdl-navigation

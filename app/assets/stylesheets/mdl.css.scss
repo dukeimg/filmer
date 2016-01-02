@@ -26,14 +26,6 @@
   color: rgb(64, 64, 64);
 }
 
-.mdl-card__supporting-text {
-  margin: 40px;
-}
-
-.mdl-card__actions {
-  padding-left: 40px;
-}
-
 .mdl-mega-footer__social-btn {
   color: rgb(158, 158, 158);
   font-size: 32px;
@@ -56,4 +48,12 @@
       color: rgb(96, 96, 96);
     }
   }
+}
+
+.mdl-card__margin{
+  margin: 40px;
+}
+
+.mdl--card__padding-x {
+  padding-left: 40px;
 }

@@ -8,6 +8,8 @@
       %h3.mdl-mega-footer__heading= t('filmer')
       %ul.mdl-mega-footer__link-list
         %li
+          =link_to t('users.sign-in'), new_user_session_path, :class => 'mdl-navigation__link'
+        %li
           =link_to t('about.about'), about_path
     .mdl-mega-footer__drop-down-section
       %h3.mdl-mega-footer__heading= t('follow-the-author')

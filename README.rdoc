@@ -9,6 +9,7 @@ Currently it uses:
 * Ruby 2.2.1
 * Rails 4.2.5
 * Material Design Lite
+* Devise
 
 README ToDo:
 

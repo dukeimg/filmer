@@ -4,17 +4,17 @@
     %h1.tagline= t('landing.tagline')
     %h3= t('landing.slogan')
     .container{ :style => "margin-top: 25px;"}
-      =link_to t('landing.get-started'), '#', :class => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'
+      =link_to t('landing.get-started'), new_user_session_path, :class => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'
 %section.mdl-grid.section--center.mdl-grid--no-spacing
   %header.mdl-cell.mdl-cell--3-col.mdl-card__media.flex-center.flexbox
     =image_tag 'rails-logo.png', :class => 'img-responsive'
   .mdl-card.mdl-cell.mdl-cell--9-col
-    .mdl-card__supporting-text
+    .mdl-card__supporting-text.mdl-card__margin
       %h4 Filmer
       %p
         #{t('landing.intro-text')}
         %a{:href => 'https://github.com/dukeimg/filmer'}
           =icon('github')
           GitHub
-    .mdl-card__actions.mdl-card--border
+    .mdl-card__actions.mdl-card--border.mdl--card__padding-x
       =link_to t('landing.learn-more'), about_path, :class => 'mdl-button mdl-js-button mdl-button--primary'

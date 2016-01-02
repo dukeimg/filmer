@@ -60,3 +60,8 @@ gem 'rails_12factor', group: :production
 gem 'breadcrumbs_on_rails'
 gem 'thin'
 gem 'devise'
+gem 'paperclip'
+gem 'autoprefixer-rails'
+gem 'aws-sdk-v1'
+gem 'figaro'
+gem 'net-ssh'
