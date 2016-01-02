@@ -1,0 +1,72 @@
+-title t('users.edit-profile')
+-if devise_mapping.confirmable? && resource.pending_reconfirmation?
+  %div Currently waiting confirmation for: #{resource.unconfirmed_email}
+.container-margin-lg
+  .mdl-card.mdl-shadow--2dp.mdl-card-lg.container-center
+    .mdl-card__title.mdl-card--border
+      .mdl-card__title-text= t('users.edit-profile')
+    = form_for resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "form-horizontal", method: :put} do |f|
+      .mdl-card__supporting-text
+        .mdl-grid
+          .mdl-cell.mdl-cell--4-col{:style => 'padding: 20px 0'}
+            %p= t('users.name')
+          .mdl-cell.mdl-cell--8-col
+            .mdl-textfield.mdl-js-textfield
+              = f.text_field :name, :class => "mdl-textfield__input"
+              %label.mdl-textfield__label{:for => 'name'}= t("users.name")
+        .mdl-grid
+          .mdl-cell.mdl-cell--4-col{:style => 'padding: 20px 0'}
+            %p= t('users.email')
+          .mdl-cell.mdl-cell--8-col
+            .mdl-textfield.mdl-js-textfield
+              = f.email_field :email, :class => "mdl-textfield__input"
+              %label.mdl-textfield__label{:for => 'email'}= t("users.email")
+        .mdl-grid
+          .mdl-cell.mdl-cell--4-col{:style => 'padding: 20px 0'}
+            %p= t('users.username')
+          .mdl-cell.mdl-cell--8-col
+            .mdl-textfield.mdl-js-textfield
+              = f.text_field :username, :class => "mdl-textfield__input", :disabled => true
+              %label.mdl-textfield__label{:for => 'username'}= t("users.username")
+            %p= t('users.cannot-change-username')
+      .mdl-card__title.mdl-card--border
+        .mdl-card__subtitle-text= t('users.edit-password')
+      .mdl-card__supporting-text
+        .mdl-grid
+          .mdl-cell.mdl-cell--4-col{:style => 'padding: 20px 0'}
+            %p= t('users.new-password')
+          .mdl-cell.mdl-cell--8-col
+            .mdl-textfield.mdl-js-textfield
+              = f.password_field :password, :class => "mdl-textfield__input"
+              %label.mdl-textfield__label{:for => 'password'} #{t('users.password-length')} 8 #{t('users.symbols')}
+            %p= t('users.leave-empty')
+        .mdl-grid
+          .mdl-cell.mdl-cell--4-col{:style => 'padding: 20px 0'}
+            %p= t('users.password-again')
+          .mdl-cell.mdl-cell--8-col
+            .mdl-textfield.mdl-js-textfield
+              = f.password_field :password_confirmation, :class => "mdl-textfield__input"
+              %label.mdl-textfield__label{:for => 'password_confirmation'}= t('users.password')
+            %p= t('users.leave-empty')
+      .mdl-card__title.mdl-card--border
+        .mdl-card__subtitle-text= t('save')
+      .mdl-card__supporting-text
+        .mdl-grid
+          .mdl-cell.mdl-cell--4-col{:style => 'padding: 20px 0'}
+            %p= t('users.current-password')
+          .mdl-cell.mdl-cell--8-col
+            .mdl-textfield.mdl-js-textfield
+              = f.password_field :current_password, :class => "mdl-textfield__input"
+              %label.mdl-textfield__label{:for => 'current_password'}= t('users.password')
+            %p= t('users.we-need-current-password')
+        .mdl-card__actions.mdl-card--border
+          = f.submit t('save'), :class => 'mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect'
+  .mdl-card.mdl-shadow--2dp.mdl-card-lg.container-center
+    .mdl-card__title.mdl-card--border
+      .mdl-card__title-text= t('users.danger-zone')
+    .mdl-card__title
+      .mdl-card__subtitle-text= t('warning')
+    .mdl-card__supporting-text
+      %p= t('users.danger-zone-warning')
+    .mdl-card__actions.mdl-card--border
+      =button_to t('users.delete-my-account'), registration_path(resource_name), data: { confirm: "#{t('users.are-you-sure')}" }, method: :delete, :class => 'mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect'
