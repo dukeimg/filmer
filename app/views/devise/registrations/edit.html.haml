@@ -15,6 +15,9 @@
             .mdl-textfield.mdl-js-textfield
               = f.text_field :name, :class => "mdl-textfield__input"
               %label.mdl-textfield__label{:for => 'name'}= t("users.name")
+            .mdl-textfield.mdl-js-textfield
+              = f.text_field :surname, :class => "mdl-textfield__input"
+              %label.mdl-textfield__label{:for => 'surname'}= t("users.surname")
         .mdl-grid
           .mdl-cell.mdl-cell--4-col{:style => 'padding: 20px 0'}
             %p= t('users.email')

@@ -1,3 +1,97 @@
-// Place all the styles related to the Pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.jumbotron {
+  background-color: transparent;
+  height: 550px;
+  margin: 50px 16px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.welcome {
+  display: block;
+  color: #fff;
+  text-rendering: optimizelegibility;
+  line-height: 1.1;
+  width: 100%;
+  max-width: 900px;
+
+  h3 {
+    color: white;
+  }
+}
+
+
+
+.rails-logo {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 2em;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+
+  >img {
+    height: 250px;
+  }
+
+  >img:first-child {
+    padding-right: 25px;
+  }
+
+  >img:last-child {
+    padding-left: 25px;
+  }
+}
+
+//about
+
+.triangle {
+  height: 30px;
+  opacity: 0;
+  position: absolute;
+}
+
+.dukeimg-background {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  overflow: hidden;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  background-color: #111111;
+  z-index: -1;
+}
+
+.pages {
+
+}
+
+/*ANIMATIONS*/
+
+@keyframes triangle-opacity{
+  20%{
+    opacity: 1
+  }
+  50%{
+    opacity: 0.7;
+  }
+  80%{
+    opacity: 1
+  }
+}
+
+@keyframes fly-triangle{
+  0%{
+  }
+  100%{
+    transform: translate(1250%, -600px) rotate(720deg) rotateY(-520deg);
+  }
+}
+

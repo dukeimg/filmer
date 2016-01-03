@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '871ef6ec50f299771105cdcc0262df14f5f49e15299598a4e00ffbb3dc6e305b7dff56c34d9eee4c00d7e5773e1c7d972dc2e94a6885cbf5fa201cc673657ac9'
+  # config.secret_key = '1c774ebf5a58ecf4476b583c22e063d2e229e92295c041d13454a135ebb411322229acfd982e96bc85f63c110c0517cd73e4d05665115a7c52297997c033d960'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -31,7 +31,7 @@ Devise.setup do |config|
   # session. If you need permissions, you should implement that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
-  # config.authentication_keys = [:email]
+  config.authentication_keys = [:username]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
@@ -64,7 +64,8 @@ Devise.setup do |config|
   # config.http_authenticatable = false
 
   # If 401 status code should be returned for AJAX requests. True by default.
-  # config.http_authenticatable_on_xhr = true
+  config.http_authenticatable_on_xhr = false
+  config.navigational_formats = ["*/*", :html, :json]
 
   # The realm used in Http Basic Authentication. 'Application' by default.
   # config.http_authentication_realm = 'Application'
@@ -99,10 +100,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '03fa41859ee61ced58072e47706c93283c7c3bdda67b3d1fe1142083b666520e0a1e4ac91076db5092fdea58eb9ed2967e8186ac1eb69945aceffaa3f6c231fa'
-
-  # Send a notification email when the user's password is changed
-  # config.send_password_change_notification = false
+  # config.pepper = '7bd98973e89a24134fb1e7a02d4a9411b16137ac0d58bb76338d0e79315ec4dcae270cc7c8f95b2c2a04530b89dc140b79f7fc92d53794c485f3129d00eeb31a'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -211,11 +209,11 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  # config.scoped_views = false
+  #config.scoped_views = true
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
-  # config.default_scope = :user
+  #config.default_scope = :user
 
   # Set this configuration to false if you want /users/sign_out to sign out
   # only the current scope. By default, Devise signs out all scopes.

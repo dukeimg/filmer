@@ -9,9 +9,14 @@
     = form_for resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "form-horizontal"} do |f|
       .mdl-card__supporting-text
         %span= t('users.what-is-your-name')
-        .mdl-textfield.mdl-js-textfield
+      .mdl-grid{:style => 'padding: 0 8px;'}
+        .mdl-textfield.mdl-js-textfield.mdl-cell.mdl-cell--6-col-desktop.mdl-cell--8-col-tablet{:style => 'margin: 0 8px;'}
           = f.text_field :name, :class => "mdl-textfield__input", :required => true
           %label.mdl-textfield__label{:for => 'name'}= t("users.name")
+        .mdl-textfield.mdl-js-textfield.mdl-cell.mdl-cell--6-col-desktop.mdl-cell--8-col-tablet{:style => 'margin: 0 8px;'}
+          = f.text_field :surname, :class => "mdl-textfield__input", :required => false
+          %label.mdl-textfield__label{:for => 'surname'}= t("users.surname")
+      .mdl-card__supporting-text{:style => 'padding: 0 16px;'}
         %span= t('users.choose-an-username')
         .mdl-textfield.mdl-js-textfield
           = f.text_field :username, :class => "mdl-textfield__input", :required => true

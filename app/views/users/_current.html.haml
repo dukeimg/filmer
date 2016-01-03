@@ -1,0 +1,14 @@
+.mdl-grid
+  .mdl-cell.mdl-cell--4-col
+    .mdl-card.mdl-shadow--2dp
+      .mdl-card__title.mdl-card--border
+        .mdl-card__title-text #{@user.name} #{@user.surname}
+        .mdl-layout-spacer
+        .mdl-card__subtitle-text @#{@user.username}
+      .mdl-card__media.bg-transparent
+        .container-margin-lg.flexbox.flex-center
+          =link_to(avatar_popup_path, :remote => true) do
+            =image_tag @user.avatar.url(:medium), :class => 'avatar', :id => 'avatar'
+      .mdl-card__actions.mdl-card--border
+        =link_to t('edit'), edit_user_registration_path, :class => 'mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect'
+        =link_to t('users.sign-out'), destroy_user_session_path, :method => 'delete', :class => 'block-right mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect'

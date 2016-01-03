@@ -21,6 +21,7 @@ ru:
     be-number: "Стать пользователем №"
     what-is-your-name: "Как вас зовут?"
     name: "Имя"
+    surname: "Фамилия"
     choose-an-username: "Выберите логин"
     email: "Электронная почта"
     password-length: "Минимальная длина: "
@@ -76,6 +77,7 @@ ru:
   requirements: "Требования"
   change: "Изменить"
   or: "Или"
+  menu: "Меню"
 
   date:
     abbr_day_names:

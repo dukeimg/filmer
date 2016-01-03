@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  layout 'fixed_drawer'
+
   def show
     @user = User.find_by_id(params[:id])
     @current = current_user

@@ -1,0 +1,7 @@
+=form_for current_user, :html => {'data-type' => 'json'}, remote: true, :authenticity_token => true, :format => :json, :multipart => true do |f|
+  .mdl-card__supporting-text
+    %p=t('pictures.upload-message')
+  .mdl-card__actions
+    .flexbox.flex-center
+      .mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent{:onclick => 'upload()'}= t('pictures.choose-file')
+      = f.file_field :avatar, :style => 'visibility: hidden; position: absolute'

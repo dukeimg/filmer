@@ -41,7 +41,7 @@
   background-color: $background_color;
   color: rgb(66, 66, 66);
 
-  a {
+  a, .mdl-navigation__link {
     color: rgb(66, 66, 66);
 
     &:hover {
@@ -56,4 +56,14 @@
 
 .mdl--card__padding-x {
   padding-left: 40px;
+}
+
+@media (max-width: 479px) {
+  .mdl--card__padding-x {
+    padding-left: 0px;
+  }
+
+  .mdl-card__margin{
+    margin: 0px;
+  }
 }

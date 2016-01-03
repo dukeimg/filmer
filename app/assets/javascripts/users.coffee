@@ -1,3 +1,14 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+root = exports ? this
+
+root.upload = ->
+  $('#user_avatar').click().fileupload({
+    dataType: 'script',
+    type: 'POST',
+    autoUpload: 'true'
+  })
+  return
+
+$(document).on('click', '#btn-close', ->
+  $('.popup').remove()
+  return
+)

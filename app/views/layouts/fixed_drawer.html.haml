@@ -1,0 +1,10 @@
+= render('layouts/head')
+%body
+  .mdl-layout.mdl-js-layout.mdl-layout__header--scroll.mdl-layout--fixed-drawer
+    %header.mdl-layout__header
+      = render('layouts/header')
+    = render('layouts/drawer')
+    %main.mdl-layout__content
+      .page-content
+        =yield
+        = render('layouts/footer')

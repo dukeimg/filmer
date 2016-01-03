@@ -1,0 +1,13 @@
+.mdl-layout__drawer
+  %span.mdl-layout-title= t('menu')
+  %nav.mdl-navigation
+    -if user_signed_in?
+      =link_to current_user, :class => 'mdl-navigation__link', :style => 'word-spacing: 10px' do
+        #{image_tag current_user.avatar.url(:thumb), :class => 'avatar'}
+        %b #{current_user.name}
+      =link_to t('dashboard'), dashboard_path, :class => 'mdl-navigation__link'
+      =link_to t('my-photos'), dashboard_path, :class => 'mdl-navigation__link'
+      =link_to t('my-films'), dashboard_path, :class => 'mdl-navigation__link'
+      =link_to t('users.sign-out'), destroy_user_session_path, method: :delete, :class => 'mdl-navigation__link'
+    -else
+      =link_to t('users.sign-in'), new_user_session_path, :class => 'mdl-navigation__link'

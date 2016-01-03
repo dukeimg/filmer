@@ -6,9 +6,9 @@
     .container{ :style => "margin-top: 25px;"}
       =link_to t('landing.get-started'), new_user_session_path, :class => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'
 %section.mdl-grid.section--center.mdl-grid--no-spacing
-  %header.mdl-cell.mdl-cell--3-col.mdl-card__media.flex-center.flexbox
+  %header.mdl-cell.mdl-cell--3-col-desktop.mdl-card__media.flex-center.flexbox.mdl-cell--2-col-tablet.mdl-cell--hide-phone
     =image_tag 'rails-logo.png', :class => 'img-responsive'
-  .mdl-card.mdl-cell.mdl-cell--9-col
+  .mdl-card.mdl-cell.mdl-cell--9-col-desktop.mdl-cell--6-col-tablet.mdl-cell--4-col-phone
     .mdl-card__supporting-text.mdl-card__margin
       %h4 Filmer
       %p

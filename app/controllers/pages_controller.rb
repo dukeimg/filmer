@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  layout 'article', except: [:landing]
+  layout 'article'
   add_breadcrumb 'Filmer', :root_path
 
   skip_before_action :authenticate_user!
@@ -7,15 +7,19 @@ class PagesController < ApplicationController
   def landing
 
     if user_signed_in?
-      redirect_to films_url
+      redirect_to dashboard_path
+    else
+      render layout: 'transparent_header'
     end
-
-    render layout: 'transparent_header'
 
   end
 
   def about
     add_breadcrumb I18n.t('breadcrumbs.about'), :about_path
+  end
+
+  def dashboard
+    render layout: 'fixed_drawer'
   end
 
 end
