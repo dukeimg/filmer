@@ -1,0 +1,6 @@
+-flash.each do |key, value|
+  .mdl-card__supporting-text.alert{:class => 'alert-' + key.to_s}
+    %ul
+      %li
+        =value
+=devise_error_messages!

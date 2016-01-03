@@ -59,7 +59,10 @@ gem 'rails_12factor', group: :production
 
 gem 'breadcrumbs_on_rails'
 gem 'thin'
+
+#Devise
 gem 'devise'
+
 gem 'paperclip'
 gem 'autoprefixer-rails'
 gem 'aws-sdk-v1'

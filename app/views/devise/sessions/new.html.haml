@@ -1,6 +1,7 @@
 -title(t('users.sign-in'))
 .flexbox.flex-center.container-margin-lg
   .mdl-card.mdl-shadow--2dp
+    = render('layouts/messages')
     .mdl-card__title.mdl-card--border
       .mdl-card__title-text= t('users.sign-in')
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
@@ -19,4 +20,4 @@
     .mdl-card__title.mdl-card--border
       .mdl-card__title-text= t('users.sign-up')
     .mdl-card__actions.container-margin.text-center
-      =link_to t('users.be-number')+(User.count+1).to_s, new_registration_path(resource_name), :class => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'
+      = link_to t('users.be-number')+(User.count+1).to_s, new_registration_path(resource_name), :class => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'

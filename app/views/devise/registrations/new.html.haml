@@ -3,32 +3,34 @@
 %p.alert= alert
 .container-fullscreen.flexbox.flex-center.container-margin-lg
   .mdl-card.mdl-shadow--2dp
+    = render('layouts/messages')
     .mdl-card__title.mdl-card--border
       .mdl-card__title-text= t('users.sign-up')
     = form_for resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "form-horizontal"} do |f|
       .mdl-card__supporting-text
         %span= t('users.what-is-your-name')
         .mdl-textfield.mdl-js-textfield
-          = f.text_field :name, :class => "mdl-textfield__input"
+          = f.text_field :name, :class => "mdl-textfield__input", :required => true
           %label.mdl-textfield__label{:for => 'name'}= t("users.name")
         %span= t('users.choose-an-username')
         .mdl-textfield.mdl-js-textfield
-          = f.text_field :username, :class => "mdl-textfield__input"
+          = f.text_field :username, :class => "mdl-textfield__input", :required => true
           %label.mdl-textfield__label{:for => 'username'}= t("users.username")
         %span= t('users.email')
         .mdl-textfield.mdl-js-textfield
-          = f.email_field :email, :class => "mdl-textfield__input"
+          = f.email_field :email, :class => "mdl-textfield__input", :required => true
           %label.mdl-textfield__label{:for => 'email'}= t("users.email")
         %span= t('users.password')
         .mdl-textfield.mdl-js-textfield
           = f.password_field :password,
                :placeholder => "",
                :class => "mdl-textfield__input",
-               autocomplete: "off"
+               autocomplete: "off",
+               :required => true
           %label.mdl-textfield__label{:for => 'password'} #{t('users.password-length')} #{@minimum_password_length} #{t('users.symbols')}
         %span= t('users.password-again')
         .mdl-textfield.mdl-js-textfield
-          = f.password_field :password_confirmation, :class => "mdl-textfield__input", autocomplete: "off"
+          = f.password_field :password_confirmation, :class => "mdl-textfield__input", autocomplete: "off", :required => true
           %label.mdl-textfield__label{:for => 'password_confirmation'}= t("users.password")
       .mdl-card__actions.mdl-card--border
         = f.submit t("users.sign-up"), :class => "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"

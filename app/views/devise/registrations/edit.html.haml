@@ -3,6 +3,7 @@
   %div Currently waiting confirmation for: #{resource.unconfirmed_email}
 .container-margin-lg
   .mdl-card.mdl-shadow--2dp.mdl-card-lg.container-center
+    = render('layouts/messages')
     .mdl-card__title.mdl-card--border
       .mdl-card__title-text= t('users.edit-profile')
     = form_for resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "form-horizontal", method: :put} do |f|
