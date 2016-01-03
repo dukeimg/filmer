@@ -14,3 +14,5 @@ development:
   S3_BUCKET_NAME: "filmer-assets"
   AWS_ACCESS_KEY_ID: 'AKIAILJPQD7V66CEMHXA'
   AWS_SECRET_ACCESS_KEY: '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'
+  email: 'duke.img'
+  password: 'odqwwteiukdjotqv'
