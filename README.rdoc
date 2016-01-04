@@ -1,7 +1,5 @@
 == Filmer
 
-{<img src="https://travis-ci.org/dukeimg/filmer.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/dukeimg/filmer]
-
 Filmer is an open-source RoR application which allows you to create interactive photo stories. It's all free and created for education purposes.
 
 Currently it uses:
