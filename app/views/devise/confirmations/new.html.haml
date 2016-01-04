@@ -1,10 +1,16 @@
-%h2 Resend confirmation instructions
-= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
-  .actions
-    = f.submit "Resend confirmation instructions"
-= render "devise/shared/links"
+-title(t('users.resend_confirmation_instructions'))
+.flexbox.flex-center.container-margin-lg.flex-column
+  .mdl-card.mdl-shadow--2dp
+    = render('layouts/messages')
+    .mdl-card__title.mdl-card--border
+      .mdl-card__title-text= t('users.resend_confirmation_instructions')
+    .mdl-card__supporting-text
+      %i= t('users.confirmation_note')
+    = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+      .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.block-center
+        = f.label :email, t('users.email'), :class => 'mdl-textfield__label'
+        = f.email_field :email, :class => "mdl-textfield__input"
+      .mdl-card__actions.mdl-card--border
+        = f.submit t('send'), :class => 'mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent'
+    .mdl-card__supporting-text.text-right
+      = render "devise/shared/links"

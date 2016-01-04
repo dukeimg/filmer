@@ -11,6 +11,10 @@
   align-items: center;
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
 .flex-top {
   justify-content: center;
   align-items: flex-start;

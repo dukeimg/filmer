@@ -1,5 +1,11 @@
 .mdl-layout__drawer
   %span.mdl-layout-title= t('menu')
+  %span
+    -flash.each do |key, value|
+      .mdl-card__actions.alert{:class => 'alert-' + key.to_s}
+        %ul
+          %li
+            =value
   %nav.mdl-navigation
     -if user_signed_in?
       =link_to current_user, :class => 'mdl-navigation__link', :style => 'word-spacing: 10px' do

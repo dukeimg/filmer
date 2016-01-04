@@ -1,4 +1,8 @@
+%h2
+  #{t('hello')}, #{@resource.name}!
+%p #{t('devise.mailer.confirmation_instructions.p1')}
+%p= link_to t('devise.mailer.confirmation_instructions.confirm_my_account'), confirmation_url(@resource, confirmation_token: @token)
 %p
-  Welcome #{@email}!
-%p You can confirm your account email through the link below:
-%p= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token)
+  #{t('devise.mailer.best_regards')},
+  %br
+  = t('devise.mailer.filmer_team')

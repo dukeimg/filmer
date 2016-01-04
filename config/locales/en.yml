@@ -1,5 +1,5 @@
 en:
-  hello: "Hello world"
+  hello: "Hello"
 
   breadcrumbs:
     about: 'about'
@@ -33,6 +33,12 @@ en:
     danger-zone-warning: "If you want to delete your account click the button below. Warning! All your data will be erased. You cannot undo this action."
     delete-my-account: "Delete my account"
     are-you-sure: "Are you sure?"
+    resend_confirmation_instructions: "Resend confirmation instructions"
+    send_reset_instructions: "Send me reset password instructions"
+    password_reset: "Change your password"
+    resend_unlock_instructions: "Resend unlock instructions"
+    didnt_receive_confirm: "Didn't receive confirmation instructions?"
+    confirmation_note: "Sometimes the email with confirmation instructions can be marked as spam. Check your spam folder if you're not receiving the email for a while."
 
   landing:
     intro-text: "Filmer is an open source app written using Ruby on Rails. You can checkout the the source code on "

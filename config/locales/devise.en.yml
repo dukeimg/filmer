@@ -17,12 +17,24 @@ en:
       unauthenticated: "You need to sign in or sign up before continuing."
       unconfirmed: "You have to confirm your email address before continuing."
     mailer:
+      best_regards: "Best regards"
+      filmer_team: "Filmer team"
       confirmation_instructions:
         subject: "Confirmation instructions"
+        p1: "You can confirm your account email through the link below:"
+        confirm_my_account: "Confirm my account"
       reset_password_instructions:
         subject: "Reset password instructions"
+        p1: "Someone has requested a link to change your password. You can do this through the link below."
+        p2: "If you didn't request this, please ignore this email."
+        p3: "Your password won't change until you access the link above and create a new one."
+        change_my_password: "Change my password"
       unlock_instructions:
         subject: "Unlock instructions"
+        p1: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+        p2: "Click the link below to unlock your account:"
+        unlock_my_account: "Unlock my account"
+
       password_change:
         subject: "Password Changed"
     omniauth_callbacks:

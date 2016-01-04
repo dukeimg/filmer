@@ -60,11 +60,11 @@
             %p= t('users.current-password')
           .mdl-cell.mdl-cell--8-col
             .mdl-textfield.mdl-js-textfield
-              = f.password_field :current_password, :class => "mdl-textfield__input"
+              = f.password_field :current_password, :class => "mdl-textfield__input", :required => true
               %label.mdl-textfield__label{:for => 'current_password'}= t('users.password')
             %p= t('users.we-need-current-password')
-        .mdl-card__actions.mdl-card--border
-          = f.submit t('save'), :class => 'mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect'
+      .mdl-card__actions.mdl-card--border
+        = f.submit t('save'), :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'
   .mdl-card.mdl-shadow--2dp.mdl-card-lg.container-center
     .mdl-card__title.mdl-card--border
       .mdl-card__title-text= t('users.danger-zone')
@@ -73,4 +73,4 @@
     .mdl-card__supporting-text
       %p= t('users.danger-zone-warning')
     .mdl-card__actions.mdl-card--border
-      =button_to t('users.delete-my-account'), registration_path(resource_name), data: { confirm: "#{t('users.are-you-sure')}" }, method: :delete, :class => 'mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect'
+      =button_to t('users.delete-my-account'), registration_path(resource_name), data: { confirm: "#{t('users.are-you-sure')}" }, method: :delete, :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'

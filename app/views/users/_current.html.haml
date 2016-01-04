@@ -10,5 +10,5 @@
           =link_to(avatar_popup_path, :remote => true) do
             =image_tag @user.avatar.url(:medium), :class => 'avatar', :id => 'avatar'
       .mdl-card__actions.mdl-card--border
-        =link_to t('edit'), edit_user_registration_path, :class => 'mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect'
-        =link_to t('users.sign-out'), destroy_user_session_path, :method => 'delete', :class => 'block-right mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect'
+        =link_to t('edit'), edit_user_registration_path, :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'
+        =link_to t('users.sign-out'), destroy_user_session_path, :method => 'delete', :class => 'block-right mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'
