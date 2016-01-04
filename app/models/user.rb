@@ -4,8 +4,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  has_many :projects
-  has_many :suggestions
+  has_many :films
+  has_many :photos
+  has_many :albums
+  has_many :comments
+
   has_attached_file :avatar, styles: {preview: '600x600>',  medium: "250x250#", thumb: "50x50#" },
                     default_url: "/images/:style/missing.png",
                     :animated => false,

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about', as: :about
   get 'dashboard'=> 'pages#dashboard'
   get 'avatar_popup' => 'users#avatar_popup'
-  resources :users, :films
+  resources :users, :films, :photos
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

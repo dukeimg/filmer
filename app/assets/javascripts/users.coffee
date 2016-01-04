@@ -1,6 +1,6 @@
 root = exports ? this
 
-root.upload = ->
+root.avatar_upload = ->
   $('#user_avatar').click().fileupload({
     dataType: 'script',
     type: 'POST',

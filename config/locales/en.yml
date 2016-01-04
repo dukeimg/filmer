@@ -62,6 +62,8 @@ en:
                        Если у Вас возникают проблемы с загрузкой, попробуйте выбрать фотографию меньшего размера."
       crop-message: ""
       choose-file: "Choose file"
+      choose-files: "Choose files"
+      upload: "Upload"
 
   warning: "Warning"
   films: "Films"
@@ -83,6 +85,10 @@ en:
   change: "Change"
   or: "Or"
   menu: "Menu"
+  my_photos: "My photos"
+  my_films: "My films"
+  overview: "Overview"
+  upload: "Upload"
 
   date:
     abbr_day_names:

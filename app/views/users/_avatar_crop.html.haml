@@ -10,7 +10,7 @@
     =form_for current_user do |f|
       -for attribute in [:crop_x, :crop_y, :crop_w, :crop_h]
         = f.hidden_field attribute, :id => attribute
-      = f.submit t('save'), :class => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'
+      = f.submit t('save'), :class => 'mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent'
 
 %script
   :plain
