@@ -1,7 +1,7 @@
 root = exports ? this
 
-root.pictures_upload = ->
-  $('#user_avatar').click().fileupload({
+root.picturesUpload = ->
+  $('#photo_image').click().fileupload({
     dataType: 'script',
     type: 'POST',
     autoUpload: 'true'

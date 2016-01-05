@@ -1,9 +1,0 @@
-.mdl-grid
-  .mdl-cell.mdl-cell--12-col.mdl-color--white.mdl-shadow--2dp
-    =form_for current_user, :html => {'data-type' => 'json'}, remote: true, :authenticity_token => true, :format => :json, :multipart => true do |f|
-      .mdl-card__supporting-text
-        %p=t('pictures.upload-message')
-      .mdl-card__actions.mdl-card--border
-        .flexbox.flex-center
-          .mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--accent{:onclick => 'pictures_upload()'}= t('pictures.choose-files')
-          = f.file_field :avatar, :style => 'visibility: hidden; position: absolute'
