@@ -1,0 +1,4 @@
+- if @photo.new_record?
+  alert("Failed to upload photo: #{ j @photo.errors.full_messages.join(', ')}
+- else
+  $('#index').prepend('= j render(@picture)');

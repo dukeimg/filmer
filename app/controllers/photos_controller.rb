@@ -1,16 +1,23 @@
 class PhotosController < ApplicationController
-  layout 'photos'
+  layout 'fixed_drawer'
 
   def index
     @photos = current_user.photos
     @photo = Photo.new
+
+    render layout: 'photos'
+  end
+
+  def show
+    @photo = Photo.find_by_id(params[:id])
+  end
+
+  def edit
+    @photo = Photo.find_by_id(params[:id])
   end
 
   def create
     @photo = Photo.create(photo_params)
-    if @photo.save
-      redirect_to photos_path
-    end
   end
 
   private

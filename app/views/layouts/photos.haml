@@ -12,8 +12,8 @@
             =link_to t('about.about'), about_path, :class => 'mdl-navigation__link'
             =link_to t('users.sign-in'), new_user_session_path, :class => 'mdl-navigation__link'
       .mdl-layout__tab-bar.mdl-js-ripple-effect
-        = link_to t('overview'), '#index', :class => 'mdl-layout__tab is-active'
-        = link_to t('pictures.upload'), '#new', :class => 'mdl-layout__tab'
+        = link_to t('overview'), photos_path, :class => 'mdl-navigation__link'
+        = link_to t('pictures.upload'), new_photo_path, :class => 'mdl-navigation__link'
     = render('layouts/drawer')
     %main.mdl-layout__content
       =yield

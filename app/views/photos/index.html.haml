@@ -1,14 +1,19 @@
 -title(t('my_photos'))
 %section.mdl-layout__tab-panel.is-active#index
-  - @photos.each do |p|
-    = image_tag p.image(:preview)
+  .mdl-grid
+    - @photos.order("created_at desc").limit(30).each do |p|
+      .mdl-cell.mdl-cell--4-col.mdl-color--white.mdl-shadow--2dp
+        .mdl-card__title
+          .mdl-card__title-text= p.title
+          .mdl-card__media
+            = link_to image_tag(p.image(:preview)), photo_path(p)
 %section.mdl-layout__tab-panel#new
   .mdl-grid
-  .mdl-cell.mdl-cell--12-col.mdl-color--white.mdl-shadow--2dp
-    =form_for @photo, url: photos_path , :multipart => true do |f|
-      .mdl-card__supporting-text
-        %p=t('pictures.upload-message')
-      .mdl-card__actions.mdl-card--border
-        .flexbox.flex-center
-          .mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--accent{:onclick => 'picturesUpload()'}= t('pictures.choose-files')
-          = f.file_field :image, :style => 'visibility: hidden; position: absolute', multiple: true, name: 'photo[image]'
+    .mdl-cell.mdl-cell--12-col.mdl-color--white.mdl-shadow--2dp
+      =form_for @photo, url: photos_path , :multipart => true do |f|
+        .mdl-card__supporting-text
+          %p=t('pictures.upload-message')
+        .mdl-card__actions.mdl-card--border
+          .flexbox.flex-center
+            .mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--accent{:onclick => 'picturesUpload()'}= t('pictures.choose-files')
+            = f.file_field :image, :style => 'visibility: hidden; position: absolute', multiple: true, name: 'photo[image]', id: 'photo_image'
