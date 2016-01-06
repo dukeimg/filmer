@@ -1,4 +1,4 @@
 - if @photo.new_record?
-  alert("Failed to upload photo: #{ j @photo.errors.full_messages.join(', ')}
+  alert('Failed');
 - else
-  $('#index').prepend('= j render(@picture)');
+  $('.mdl-grid').append("#{j render('photos/upload')}");
