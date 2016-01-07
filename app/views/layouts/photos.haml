@@ -6,10 +6,10 @@
         =link_to t('Filmer'), root_path, :class => 'mdl-layout-title logo-brand'
         .mdl-layout-spacer
         %nav.mdl-navigation
+          =link_to t('about.about'), about_path, :class => 'mdl-navigation__link'
           -if user_signed_in?
             =link_to t('users.sign-out'), destroy_user_session_path, method: :delete, :class => 'mdl-navigation__link'
           -else
-            =link_to t('about.about'), about_path, :class => 'mdl-navigation__link'
             =link_to t('users.sign-in'), new_user_session_path, :class => 'mdl-navigation__link'
       .mdl-layout__header-row
         %nav.mdl-navigation
@@ -18,4 +18,3 @@
     = render('layouts/drawer')
     %main.mdl-layout__content
       =yield
-      = render('layouts/footer')

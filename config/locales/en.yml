@@ -64,8 +64,12 @@ en:
       choose-file: "Choose file"
       choose-files: "Choose files"
       upload: "Upload"
+      permissions__error-text: "This user has restricted access to this photos."
+      no_description: "No description"
+      hidden: "Private"
 
   warning: "Warning"
+  error: "Error"
   films: "Films"
   follow-the-author: "Follow the author"
   copyright: "Filmer © 2015 "

@@ -13,10 +13,16 @@ class PhotosController < ApplicationController
 
   def show
     @photo = Photo.find_by_id(params[:id])
+    if @photo.user_id != current_user.id
+      render 'photos/error'
+    end
   end
 
   def edit
     @photo = Photo.find_by_id(params[:id])
+    if @photo.user_id != current_user.id
+      render 'photos/error'
+    end
   end
 
   def new
@@ -25,6 +31,16 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.create(photo_params)
+    respond_to do |format|
+      format.html
+      format.js {render :layout => false}
+    end
+  end
+
+  def destroy
+    @photo = Photo.find_by_id(params[:id])
+    @photo.image.destroy
+    @photo.delete
     respond_to do |format|
       format.html
       format.js {render :layout => false}

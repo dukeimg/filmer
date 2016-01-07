@@ -17,3 +17,6 @@
       =link_to t('users.sign-out'), destroy_user_session_path, method: :delete, :class => 'mdl-navigation__link'
     -else
       =link_to t('users.sign-in'), new_user_session_path, :class => 'mdl-navigation__link'
+  .mdl-layout-spacer
+  %nav.mdl-navigation
+    =link_to t('about.about'), about_path, :class => 'mdl-navigation__link'

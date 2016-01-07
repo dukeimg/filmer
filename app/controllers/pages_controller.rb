@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   layout 'article'
   add_breadcrumb 'Filmer', :root_path
 
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, except: [:dashboard]
 
   def landing
 

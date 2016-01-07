@@ -65,8 +65,12 @@ ru:
     choose-file: "Выбрать файл"
     choose-files: "Выбрать файлы"
     upload: "Загрузить"
+    permissions__error-text: "Пользователь ограничил доступ к этому фото."
+    no_description: "Без описания"
+    hidden: "Частное"
 
   warning: "Внимание"
+  error: "Ошибка"
   films: "Альбомы"
   follow-the-author: "Следите за автором"
   copyright: "Filmer © 2015 "
