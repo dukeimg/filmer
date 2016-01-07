@@ -42,4 +42,4 @@ and add following:
     `sudo apt-get install imagemagick -y`
 to install ImageMagic
 
-Done
+Done.
