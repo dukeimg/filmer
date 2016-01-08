@@ -11,3 +11,12 @@
   margin: 40px 0;
   padding: 40px;
 }
+
+.photo__film {
+  display: flex;
+  align-items: baseline;
+
+  img {
+    margin-right: 5px;
+  }
+}

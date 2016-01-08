@@ -57,16 +57,19 @@ en:
       how-text: "As stated above it's a Ruby on Rails application. Frontend is developed using AngularJS and Material Design Lite. Database is SQLite for development and Postgresql for production using adapter."
 
   pictures:
-      upload-message: "Друзьям будет проще узнать Вас, если Вы загрузите свою настоящую фотографию.
-                       Вы можете загрузить изображение в формате JPG, GIF или PNG.
-                       Если у Вас возникают проблемы с загрузкой, попробуйте выбрать фотографию меньшего размера."
-      crop-message: ""
-      choose-file: "Choose file"
-      choose-files: "Choose files"
-      upload: "Upload"
-      permissions__error-text: "This user has restricted access to this photos."
-      no_description: "No description"
-      hidden: "Private"
+    last: "Last uploads"
+    hide: "Hide photos from other users. You can change this parameter for each photo separately later."
+    upload-title: "Pictures upload"
+    upload-message: "Upload one or a few pictures at the same moment. Most common formats are available."
+    avatar-upload-message: "It will be easier for your friends to recognize you, if you will upload your real photo.
+    You can upload JPG, GIF or PNG. If you're having troubles with uploading, try to choose a picture with less resolution."
+    crop-message: "Choose an are for cropping. If you will skip this part, we will choose it automatically."
+    choose-file: "Choose file"
+    choose-files: "Choose files"
+    upload: "Upload"
+    permissions__error-text: "This user has restricted access to this photos."
+    no_description: "No description"
+    hidden: "Private"
 
   warning: "Warning"
   error: "Error"

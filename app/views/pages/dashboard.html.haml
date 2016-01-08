@@ -1,1 +1,8 @@
 -title(t('dashboard'))
+.mdl-grid
+  .mdl-cell.mdl-cell--12-col.mdl-shadow--2dp.mdl-color--white{:style => 'overflow: hidden'}
+    .mdl-card__title
+      .mdl-card__title-text= t('pictures.last')
+    .photo__film
+      - @last_photos.each do |p|
+        = link_to (image_tag p.image(:thumb)), photo_path(p)

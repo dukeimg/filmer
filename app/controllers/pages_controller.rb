@@ -19,6 +19,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @last_photos = Photo.all.where(private: false).order('created_at desc').limit(7)
     render layout: 'fixed_drawer'
   end
 

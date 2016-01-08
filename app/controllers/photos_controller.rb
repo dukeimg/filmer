@@ -50,7 +50,7 @@ class PhotosController < ApplicationController
   private
 
   def photo_params
-    defaults = {:user_id => current_user.id, :private => true, :description => t('pictures.no_description')}
-    params.require(:photo).permit(:image, :title, :description).merge(defaults)
+    defaults = {:user_id => current_user.id, :description => t('pictures.no_description')}
+    params.require(:photo).permit(:image, :title, :description, :private).merge(defaults)
   end
 end
