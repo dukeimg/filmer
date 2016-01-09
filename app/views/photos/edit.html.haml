@@ -1,0 +1,26 @@
+- title(@photo.title)
+.mdl-grid
+  .mdl-cell.mdl-cell--12-col.mdl-color--white.mdl-shadow--2dp
+    .mdl-card__title
+      .mdl-card__title-text= @photo.title
+    .mdl-grid
+      .mdl-cell.mdl-cell--4-col-desktop
+        .flexbox.flex-center.flex-column
+          .mdl-card__media
+            = image_tag @photo.image(:thumb), class: 'photo__preview--edit'
+          .mdl-card__actions.flex-center.flexbox
+            =link_to t('delete'), photo_path(@photo), :method => 'delete', data: { confirm: "#{t('users.are-you-sure')}" }, :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'
+      .mdl-cell.mdl-cell--4-col-desktop
+        = form_for @photo do |p|
+          .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+            = p.label :title, t('pictures.title'), :class => 'mdl-textfield__label'
+            = p.text_field :title, :class => "mdl-textfield__input"
+          .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+            = p.label :description, t('pictures.description'), :class => 'mdl-textfield__label'
+            = p.text_area :description, :class => "mdl-textfield__input"
+          .mdl-textfield
+            = p.label :private, :class => 'mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect' do
+              = p.check_box :private, :class => 'mdl-checkbox__input'
+              %span.mdl-checkbox__label= t('pictures.hidden')
+          .mdl-card__actions
+            = p.submit t('save'), :class => 'mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent'

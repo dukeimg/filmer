@@ -1,4 +1,4 @@
-== Filmer
+# Filmer
 
 Filmer is an open-source RoR application which allows you to create interactive photo stories. It's all free and created for education purposes.
 
@@ -9,7 +9,7 @@ Currently it uses:
 * Material Design Lite
 * Devise
 
-== How to try it localy
+# How to try it localy
 
 1. Fork it!
 2. Clone it

@@ -7,6 +7,12 @@
   width: 100%;
 }
 
+.photo__preview--edit {
+  height: 100%;
+  width: 100%;
+  border: 1px solid $primary_color;
+}
+
 .photo__upload-progressbar {
   margin: 40px 0;
   padding: 40px;
@@ -19,4 +25,9 @@
   img {
     margin-right: 5px;
   }
+}
+
+.photo__show {
+  height: calc(100vh - 128px);
+  width: 100%;
 }

@@ -1,1 +1,15 @@
-= image_tag @photo.image
+- title(@photo.title)
+.mdl-grid
+  .mdl-cell--12-col
+    .mdl-card-lg-stretch.mdl-shadow--2dp.mdl-color--white.photo__show.flexbox.flex-column
+      .mdl-card__title
+        .mdl-card__title-text= @photo.title
+        - if @photo.private?
+          %i.mdl--card__padding-x= t('pictures.hidden')
+      #photo{:style => "height: 100%; background: url('#{@photo.image}') center / contain no-repeat"}
+      .mdl-card__supporting-text{:style => 'margin-top: 20px;'}
+        %p= @photo.description
+      - if @photo.user_id === current_user.id
+        .mdl-card__actions.mdl-card--border
+          =link_to t('edit'), edit_photo_path(@photo), :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'
+          =link_to t('delete'), photo_path(@photo), :remote => true, :method => 'delete', :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'

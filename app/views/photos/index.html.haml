@@ -13,4 +13,4 @@
       .mdl-layout-spacer
       .mdl-card__actions.mdl-card--border
         =link_to t('edit'), edit_photo_path(p), :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'
-        =link_to t('delete'), photo_path(p), :remote => true, :method => 'delete', :class => 'block-right mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'
+        =link_to t('delete'), photo_path(p), data: { confirm: "#{t('users.are-you-sure')}" }, :remote => true, :method => 'delete', :class => 'block-right mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'
