@@ -21,8 +21,8 @@ class UsersController < ApplicationController
 
   def destroy
     @user = @current
-    @user.photo.destroy_all
-    @user.album.destroy_all
+    @user.photos.destroy
+    @user.albums.destroy
     if @user.destroy
       redirect_to root_path
     end

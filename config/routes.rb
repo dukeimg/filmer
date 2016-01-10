@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get 'dashboard'=> 'pages#dashboard'
   get 'avatar_popup' => 'users#avatar_popup'
   resources :users, :films, :photos, :albums
-
+  delete 'destroy_all_photos' => 'photos#destroy_all'
+  delete 'destroy_all_albums' => 'albums#destroy_all'
   authenticated :user do
     root to: 'pages#dashboard', as: :authenticated_root
   end

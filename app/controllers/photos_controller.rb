@@ -60,6 +60,12 @@ class PhotosController < ApplicationController
     end
   end
 
+  def destroy_all
+    @photos = current_user.photos
+    @photos.destroy
+    render photos_path
+  end
+
   private
 
   def photo_params

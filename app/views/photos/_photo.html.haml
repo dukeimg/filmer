@@ -1,6 +1,6 @@
 .mdl-cell.mdl-cell--4-col.mdl-shadow--2dp.mdl-card{:id => photo.id}
-  .photo__preview
-    = link_to (image_tag photo.image(:preview), class: 'photo__preview'), photo_path(photo)
+  .photo__preview{:style => "background: url('#{photo.image(:preview)}') center / cover"}
+    = link_to '', photo_path(photo), class: 'photo__preview', :style => 'display:block;'
   .mdl-card__title
     .mdl-card__title-text= photo.title
     - if photo.private?

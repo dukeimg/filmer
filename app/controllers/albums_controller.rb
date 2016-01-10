@@ -11,6 +11,14 @@ class AlbumsController < ApplicationController
     end
   end
 
+  def destroy_all
+    @albums = current_user.albums
+    @albums.photos.destroy
+    @albums.destroy
+
+    render photos_path
+  end
+
   private
 
   def album_params

@@ -1,0 +1,12 @@
+.mdl-grid
+  .mdl-cell.mdl-cell--12-col.mdl-shadow--2dp.mdl-color--white
+    .mdl-card__title
+      .mdl-card__title-text
+        = t('albums.you_have') + ' '
+        = @albums.count.to_s + ' '
+        = t('albums.albums')
+    - if @albums.count == 0
+      .mdl-card__supporting-text
+        = link_to t('albums.create_first'), new_album_path # Create your first one right now
+.mdl-grid
+  = render @albums unless @albums.count == 0
