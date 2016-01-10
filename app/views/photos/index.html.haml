@@ -1,5 +1,9 @@
 - title(t('my_photos'))
 .mdl-grid#photos
+  - if @albums.count == 0
+    = render ('albums/first')
+  - else
+    = render ('albums/all')
   = render @photos
 .mdl-grid#more
   = will_paginate

@@ -7,11 +7,11 @@ class PhotosController < ApplicationController
 
     if @photos.count == 0
       redirect_to new_photo_path
-    end
-
-    respond_to do |format|
-      format.html
-      format.js {render :layout => false}
+    else
+      respond_to do |format|
+        format.html
+        format.js {render :layout => false}
+      end
     end
   end
 

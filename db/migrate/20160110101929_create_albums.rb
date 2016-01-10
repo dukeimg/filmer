@@ -3,6 +3,7 @@ class CreateAlbums < ActiveRecord::Migration
     create_table :albums do |t|
       t.string :title
       t.boolean :private
+      t.integer :user_id
 
       t.timestamps null: false
     end

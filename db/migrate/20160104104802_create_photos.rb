@@ -4,6 +4,7 @@ class CreatePhotos < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.boolean :private
+      t.integer :user_id
 
       t.timestamps null: false
     end
