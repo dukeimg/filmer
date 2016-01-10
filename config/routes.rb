@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about', as: :about
   get 'dashboard'=> 'pages#dashboard'
   get 'avatar_popup' => 'users#avatar_popup'
-  resources :users, :films, :photos
+  resources :users, :films, :photos, :albums
 
   authenticated :user do
     root to: 'pages#dashboard', as: :authenticated_root

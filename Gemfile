@@ -69,3 +69,4 @@ gem 'aws-sdk-v1'
 gem 'figaro'
 gem 'net-ssh'
 gem 'letter_opener', :group => :development
+gem 'will_paginate'

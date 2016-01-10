@@ -1,16 +1,5 @@
 - title(t('my_photos'))
-.mdl-grid
-  - @photos.order('created_at desc').limit(15).each do |p|
-    .mdl-cell.mdl-cell--4-col.mdl-shadow--2dp.mdl-card{:id => p.id}
-      .photo__preview
-        = link_to (image_tag p.image(:preview), class: 'photo__preview'), photo_path(p)
-      .mdl-card__title
-        .mdl-card__title-text= p.title
-        - if p.private?
-          .mdl-layout-spacer
-          %i= t('pictures.hidden')
-      .mdl-card__supporting-text= p.description
-      .mdl-layout-spacer
-      .mdl-card__actions.mdl-card--border
-        =link_to t('edit'), edit_photo_path(p), :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'
-        =link_to t('delete'), photo_path(p), data: { confirm: "#{t('users.are-you-sure')}" }, :remote => true, :method => 'delete', :class => 'block-right mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'
+.mdl-grid#photos
+  = render @photos
+.mdl-grid#more
+  = will_paginate

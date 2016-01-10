@@ -1,8 +1,7 @@
-class CreatePhotos < ActiveRecord::Migration
+class CreateAlbums < ActiveRecord::Migration
   def change
-    create_table :photos do |t|
+    create_table :albums do |t|
       t.string :title
-      t.text :description
       t.boolean :private
 
       t.timestamps null: false

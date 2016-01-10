@@ -1,0 +1,7 @@
+$('#photos').append('#{ j render @photos }');
+- if @photos.next_page
+  $('.pagination').replaceWith('#{ j will_paginate @photos }');
+  componentHandler.upgradeDom()
+- else
+  $('.mdl-layout__content').off('scroll');
+  $('.pagination').remove();

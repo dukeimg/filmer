@@ -19,6 +19,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user = @current
+    @user.photo.destroy_all
+    @user.album.destroy_all
+    if @user.destroy
+      redirect_to root_path
+    end
+  end
+
   private
 
   def user_params
