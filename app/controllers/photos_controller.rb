@@ -18,20 +18,28 @@ class PhotosController < ApplicationController
   def show
     @photo = Photo.find_by_id(params[:id])
     check_photo(@photo)
-
   end
 
   def edit
+    @albums = current_user.albums
     @photo = Photo.find_by_id(params[:id])
-    check_photo(@photo)
+    if @photo.user == current_user
+      check_photo(@photo)
+    else
+      render 'photos/error'
+    end
   end
 
   def update
     @photo = Photo.find_by_id(params[:id])
-    check_photo(@photo)
 
-    if @photo.update(photo_params_update)
-      redirect_to photo_path(@photo)
+    if @photo.user == current_user
+      check_photo(@photo)
+      if @photo.update(photo_params_update)
+        redirect_to photo_path(@photo)
+      end
+    else
+      render 'photos/error'
     end
   end
 
@@ -50,9 +58,12 @@ class PhotosController < ApplicationController
 
   def destroy
     @photo = Photo.find_by_id(params[:id])
-    check_photo(@photo)
-    @photo.image.destroy
-    @photo.delete
+    if @photo.user == current_user
+      @photo.image.destroy
+      @photo.delete
+    else
+      render 'photos/error'
+    end
 
     respond_to do |format|
       format.html {redirect_to photos_path}
