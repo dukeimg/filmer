@@ -11,6 +11,13 @@ class AlbumsController < ApplicationController
     end
   end
 
+  def show
+    @album = Album.find_by_id(params[:id])
+    check_album(@album)
+    @photos = @album.photos.paginate(:page => params[:page], per_page: 15).order('created_at DESC') unless @album.photos.count == 0
+    @upload = Photo.new
+  end
+
   def destroy_all
     @albums = current_user.albums
     @albums.photos.destroy
@@ -22,7 +29,8 @@ class AlbumsController < ApplicationController
   private
 
   def album_params
-    params.require(:album).permit(:title, :private)
+    defaults = {:user_id => current_user.id}
+    params.require(:album).permit(:title, :private).merge(defaults)
   end
 
   def check_album(album)

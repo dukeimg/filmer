@@ -3,6 +3,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
+    if @user.nil?
+      not_found
+    end
     @current = current_user
     if @user == @current
       @photos = @user.photos.paginate(:page => params[:page], per_page: 15).order('created_at DESC')
@@ -26,6 +29,8 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find_by_id(params[:id])
+    @user.albums.destroy_all
+    @user.photos.destroy_all
     if @user.destroy
       redirect_to root_path
     end

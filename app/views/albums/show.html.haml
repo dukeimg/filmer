@@ -1,0 +1,15 @@
+- title(@album.title)
+.mdl-grid
+  .mdl-cell.mdl-cell--12-col.mdl-shadow--2dp.mdl-color--white
+    .mdl-card__title
+      .mdl-card__title-text
+        = @album.title
+      .mdl-layout-spacer
+      = link_to t('pictures.upload'), new_photo_path, :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'
+      = link_to t('edit'), edit_album_path(@album), :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'
+      = link_to t('delete'), album_path(@album), :remote => true, :method => 'delete', :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'
+- if !@photos.nil?
+  .mdl-grid#photos
+    = render @photos
+  .mdl-grid#more
+    = will_paginate

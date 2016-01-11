@@ -45,6 +45,7 @@ class PhotosController < ApplicationController
 
   def new
     @photo = Photo.new
+    @albums = current_user.albums
   end
 
   def create
@@ -73,8 +74,8 @@ class PhotosController < ApplicationController
 
   def destroy_all
     @photos = current_user.photos
-    @photos.destroy
-    render photos_path
+    @photos.destroy_all
+    redirect_to photos_path
   end
 
   private

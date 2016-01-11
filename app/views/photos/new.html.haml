@@ -10,6 +10,9 @@
           = f.label :private, :class => 'mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect' do
             = f.check_box :private, :class => 'mdl-checkbox__input'
             %span.mdl-checkbox__label= t('pictures.hide')
+          //- if @albums.count != 0
+          //  .mdl-textfield
+          //    = f.collection_select :album, :user_id, current_user, :album.title
         .mdl-card__actions.mdl-card--border
           .flexbox.flex-center
             .mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--accent{:onclick => 'picturesUpload()'}= t('pictures.choose-files')
