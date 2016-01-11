@@ -22,5 +22,8 @@
             = p.label :private, :class => 'mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect' do
               = p.check_box :private, :class => 'mdl-checkbox__input'
               %span.mdl-checkbox__label= t('pictures.hidden')
+          - if @albums.count != 0
+            .mdl-textfield
+              = p.select :album
           .mdl-card__actions
             = p.submit t('save'), :class => 'mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent'
