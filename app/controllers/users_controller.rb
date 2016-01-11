@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = current_user
+    @user = User.find_by_id(params[:id])
     if @user.update(user_params)
       if @user.cropping?
         @user.avatar.reprocess!
@@ -20,13 +20,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = current_user
-    #@user.photos.destroy
-    #@user.albums.destroy
-    #if @user.destroy
-    #  redirect_to root_path
-    #end
-    @user.destroy
+    @user = User.find_by_id(params[:id])
+    if @user.destroy
+      redirect_to root_path
+    end
   end
 
   private
