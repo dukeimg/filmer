@@ -2,10 +2,9 @@
   .mdl-cell.mdl-cell--4-col
     .mdl-card.mdl-shadow--2dp
       .mdl-card__title.mdl-card--border
-        .mdl-card__title-text #{@user.name}
+        .mdl-card__title-text #{@user.name} #{@user.surname}
         .mdl-layout-spacer
         .mdl-card__subtitle-text @#{@user.username}
       .mdl-card__media.bg-transparent
         .container-margin-lg.flexbox.flex-center
-          =link_to(avatar_popup_path, :remote => true) do
-            =image_tag @user.avatar.url(:medium), :class => 'avatar', :id => 'avatar'
+          =image_tag @user.avatar.url(:medium), :class => 'avatar', :id => 'avatar'
