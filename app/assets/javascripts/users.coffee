@@ -18,3 +18,12 @@ $(document).on('click', '#btn-close', ->
   $('.popup').remove()
   return
 )
+
+jQuery ->
+  if $('#more').size() > 0
+    $('.page-content').bindWithDelay 'scroll', ->
+      more_posts_url = $('.pagination .next_page').attr('href')
+      if more_posts_url && $('.mdl-layout__content').scrollTop() > $('.page-content').height() - $(window).height() - 120
+        $.getScript more_posts_url
+      return
+    , 250

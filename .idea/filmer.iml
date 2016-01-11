@@ -236,6 +236,7 @@
     <orderEntry type="library" scope="PROVIDED" name="jcrop-rails-v2 (v0.9.12.3, RVM: ruby-2.2.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-fileupload-rails (v0.4.6, RVM: ruby-2.2.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v4.0.5, RVM: ruby-2.2.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jquery-turbolinks (v2.1.0, RVM: ruby-2.2.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-ui-rails (v5.0.5, RVM: ruby-2.2.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="json (v1.8.3, RVM: ruby-2.2.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="launchy (v2.4.3, RVM: ruby-2.2.3) [gem]" level="application" />

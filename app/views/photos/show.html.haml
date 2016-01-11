@@ -9,6 +9,9 @@
       #photo{:style => "height: 100%; background: url('#{@photo.image}') center / contain no-repeat"}
       .mdl-card__supporting-text{:style => 'margin-top: 20px;'}
         %p= @photo.description
+        %p
+          = t('by') + ' '
+          = link_to @photo.user.username, user_path(@photo.user)
       - if @photo.user_id === current_user.id
         .mdl-card__actions.mdl-card--border
           =link_to t('edit'), edit_photo_path(@photo), :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'

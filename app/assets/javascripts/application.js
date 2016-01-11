@@ -11,14 +11,17 @@
 // about supported directives.
 //
 //= require jquery
-//= require turbolinks
+//= require jquery.turbolinks
 //= require jquery-ui
 //= require jquery_ujs
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
 //= require jquery.Jcrop
+//= require turbolinks
 //= require_tree .
 
+
+// Upgrade DOM for MDL
 document.addEventListener('page:change', function() {
     componentHandler.upgradeDom();
 });

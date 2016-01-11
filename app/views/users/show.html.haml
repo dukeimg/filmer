@@ -3,3 +3,7 @@
   =render('current')
 -else
   =render('else')
+.mdl-grid#photos
+  = render @photos
+.mdl-grid#more
+  = will_paginate @photos
