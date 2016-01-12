@@ -3,11 +3,9 @@
     .mdl-card__title
       .mdl-card__title-text
         %span
-          = t('albums.you_have') + ' '
-          = @albums.count.to_s + ' '
-          = t('albums.albums')
+          = t('albums.you_have_x_albums', :count => @albums.count)
     - if @albums.count == 0
       .mdl-card__supporting-text
-        = link_to t('albums.create_first'), new_album_path # Create your first one right now
+        = link_to t('albums.create_new'), new_album_path # Create your first one right now
 .mdl-grid
   = render @albums unless @albums.count == 0

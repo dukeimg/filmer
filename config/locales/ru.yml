@@ -73,6 +73,17 @@ ru:
     no_description: "Без описания"
     hidden: "Частное"
 
+  albums:
+    you_have_x_albums:
+      one: "У вас один альбом"
+      few: "У вас %{count} альбома"
+      many: "У вас %{count} альбомов"
+      other: "У вас %{count} альбомов"
+    create_new: "Создать новый альбом"
+    new: "Новый альбом"
+    title: "Название"
+    private: "Частный"
+
   warning: "Внимание"
   error: "Ошибка"
   films: "Альбомы"

@@ -71,6 +71,15 @@ en:
     no_description: "No description"
     hidden: "Private"
 
+    albums:
+      you_have_x_albums:
+        one: "You have one album"
+        other: "You have %{count} albums"
+      create_new: "Create a new one"
+      new: "New album"
+      title: "Title"
+      private: "Private"
+
   warning: "Warning"
   error: "Error"
   films: "Films"
