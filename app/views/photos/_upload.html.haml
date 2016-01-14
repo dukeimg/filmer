@@ -6,7 +6,9 @@
     - if @photo.private?
       .mdl-layout-spacer
       %i= t('pictures.hidden')
-  .mdl-card__supporting-text= @photo.description
+  .mdl-card__supporting-text
+    %p= @photo.description
+    %p= t('albums.from') + ' ' + (link_to  @photo.album.title, @photo.album) unless @photo.album.nil?
   .mdl-layout-spacer
   .mdl-card__actions.mdl-card--border
     =link_to t('edit'), edit_photo_path(@photo), :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'

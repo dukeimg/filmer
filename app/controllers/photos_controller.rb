@@ -74,15 +74,17 @@ class PhotosController < ApplicationController
 
   def destroy_all
     @photos = current_user.photos
-    @photos.destroy_all
-    redirect_to photos_path
+    redirect_to dashboard_path, notice: 'It will take a time'
+    Thread.new do
+      @photos.destroy_all
+    end
   end
 
   private
 
   def photo_params
     defaults = {:user_id => current_user.id, :description => t('pictures.no_description')}
-    params.require(:photo).permit(:image, :title, :description, :private).merge(defaults)
+    params.require(:photo).permit(:image, :title, :description, :private, :album_id).merge(defaults)
   end
 
   def photo_params_update

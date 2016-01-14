@@ -16,14 +16,30 @@ class AlbumsController < ApplicationController
     check_album(@album)
     @photos = @album.photos.paginate(:page => params[:page], per_page: 15).order('created_at DESC') unless @album.photos.count == 0
     @upload = Photo.new
+
+    respond_to do |format|
+      format.html
+      format.js {render :layout => false}
+    end
   end
 
   def destroy_all
     @albums = current_user.albums
-    @albums.photos.destroy
-    @albums.destroy
+    Thread.new do
+      @albums.photos.destroy
+      @albums.destroy
+    end
 
-    render photos_path
+    render dashboard_path
+  end
+
+  def destroy
+    @album = Album.find_by_id(params[:id])
+    Thread.new do
+      @album.photos.destroy_all
+      @album.destroy
+    end
+    redirect_to dashboard_path
   end
 
   private

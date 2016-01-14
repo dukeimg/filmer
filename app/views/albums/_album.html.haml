@@ -1,0 +1,14 @@
+.mdl-cell.mdl-cell--4-col.mdl-shadow--2dp.mdl-card{:id => album.id}
+  - if album.photos.count == 0
+    .photo__preview{:style => "background: url('/images/medium/missing.png') center / cover"}
+      = link_to '', album_path(album), class: 'photo__preview', :style => 'display:block;'
+  - else
+    .photo__preview{:style => "background: url('#{album.photos.last.image(:preview)}') center / cover"}
+      = link_to '', album_path(album), class: 'photo__preview', :style => 'display:block;'
+  .mdl-card__title
+    .mdl-card__title-text= album.title
+    - if album.private?
+      .mdl-layout-spacer
+      %i= t('pictures.hidden')
+  .mdl-card__supporting-text
+    %p= t('albums.of') + ' ' + (link_to  album.user.username, album.user)

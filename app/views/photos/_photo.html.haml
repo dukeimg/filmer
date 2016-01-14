@@ -6,7 +6,10 @@
     - if photo.private?
       .mdl-layout-spacer
       %i= t('pictures.hidden')
-  .mdl-card__supporting-text= photo.description
+  .mdl-card__supporting-text
+    %p= photo.description
+    %p= t('by') + ' ' + (link_to photo.user.username, user_path(photo.user))
+    %p= t('albums.from') + ' ' + (link_to  photo.album.title, photo.album) unless photo.album.nil?
   .mdl-layout-spacer
   - if photo.user == current_user
     .mdl-card__actions.mdl-card--border

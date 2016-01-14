@@ -5,11 +5,14 @@
       .mdl-card__title-text
         = @album.title
       .mdl-layout-spacer
-      = link_to t('pictures.upload'), new_photo_path, :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'
-      = link_to t('edit'), edit_album_path(@album), :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'
-      = link_to t('delete'), album_path(@album), :remote => true, :method => 'delete', :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'
+      = t('album.of') + ' ' + (link_to @album.user.username, @album.user)
+    - if @album.user == current_user
+      .mdl-card__title
+        = link_to t('pictures.upload'), new_photo_path, :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'
+        = link_to t('edit'), edit_album_path(@album), :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'
+        = link_to t('delete'), album_path(@album), :method => 'delete', :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'
 - if !@photos.nil?
   .mdl-grid#photos
     = render @photos
   .mdl-grid#more
-    = will_paginate
+    = will_paginate @photos

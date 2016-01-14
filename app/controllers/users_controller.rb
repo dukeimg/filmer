@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     if @user.nil?
       not_found
     end
+    @albums = @user.albums
     @current = current_user
     if @user == @current
       @photos = @user.photos.paginate(:page => params[:page], per_page: 15).order('created_at DESC')
