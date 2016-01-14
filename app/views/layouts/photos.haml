@@ -14,7 +14,7 @@
       .mdl-layout__header-row
         %nav.mdl-navigation
           = link_to t('overview'), photos_path, :class => 'mdl-navigation__link'
-          = link_to t('albums.new_album'), new_album_path, :class => 'mdl-navigation__link'
+          = link_to t('albums.new'), new_album_path, :class => 'mdl-navigation__link'
           = link_to t('pictures.upload'), new_photo_path, :class => 'mdl-navigation__link'
     = render('layouts/drawer')
     %main.mdl-layout__content

@@ -8,7 +8,10 @@
       %i= t('pictures.hidden')
   .mdl-card__supporting-text
     %p= @photo.description
-    %p= t('albums.from') + ' ' + (link_to  @photo.album.title, @photo.album) unless @photo.album.nil?
+    - if @photo.album != nil
+      %p
+        = t('albums.from')
+        = (link_to  @photo.album.title, @photo.album)
   .mdl-layout-spacer
   .mdl-card__actions.mdl-card--border
     =link_to t('edit'), edit_photo_path(@photo), :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'

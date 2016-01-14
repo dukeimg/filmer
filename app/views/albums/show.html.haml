@@ -5,7 +5,9 @@
       .mdl-card__title-text
         = @album.title
       .mdl-layout-spacer
-      = t('album.of') + ' ' + (link_to @album.user.username, @album.user)
+      %span
+        = t('albums.of')
+        = (link_to @album.user.username, @album.user)
     - if @album.user == current_user
       .mdl-card__title
         = link_to t('pictures.upload'), new_photo_path, :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'

@@ -80,7 +80,7 @@ class PhotosController < ApplicationController
       @photos.delete_all
       @albums.destroy_all
     end
-    redirect_to dashboard_path, notice: 'It will take a time'
+    redirect_to dashboard_path, notice: t('pictures.after_delete_message')
   end
 
   private

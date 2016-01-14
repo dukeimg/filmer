@@ -39,6 +39,8 @@ en:
     resend_unlock_instructions: "Resend unlock instructions"
     didnt_receive_confirm: "Didn't receive confirmation instructions?"
     confirmation_note: "Sometimes the email with confirmation instructions can be marked as spam. Check your spam folder if you haven't recieved the email after a while."
+    photos_of: "Photos of"
+    albums_of: "Albums of"
 
   landing:
     intro-text: "Filmer is an open source app written using Ruby on Rails. You can checkout the the source code on "
@@ -69,15 +71,24 @@ en:
     permissions__error-text: "This user has restricted access to this photo."
     no_description: "No description"
     hidden: "Private"
+    uploading: "Uploading..."
+    by: "By"
+    danger-zone-warning: "This action will delete all your photos and albums. Warning, this action cannot be undone."
+    delete_all: "Delete all photos"
+    after_delete_message: "Deleting will take some time"
 
-    albums:
-      you_have_x_albums:
-        one: "You have one album"
-        other: "You have %{count} albums"
-      create_new: "Create a new one"
-      new: "New album"
-      title: "Title"
-      private: "Private"
+  albums:
+    you_have_x_albums:
+      one: "You have one album"
+      other: "You have %{count} albums"
+    create_new: "Create a new one"
+    new: "New album"
+    title: "Title"
+    private: "Private"
+    in_which: "Upload in album"
+    from: "From"
+    of: "Album of"
+
 
   warning: "Warning"
   error: "Error"
@@ -104,8 +115,9 @@ en:
   my_films: "My films"
   overview: "Overview"
   upload: "Upload"
+  delete: "Delete"
 
-  # Do not touch the localization under
+  # Do not touch the localization below
 
   date:
     abbr_day_names:

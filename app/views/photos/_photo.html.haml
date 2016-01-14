@@ -8,8 +8,15 @@
       %i= t('pictures.hidden')
   .mdl-card__supporting-text
     %p= photo.description
-    %p= t('by') + ' ' + (link_to photo.user.username, user_path(photo.user))
-    %p= t('albums.from') + ' ' + (link_to  photo.album.title, photo.album) unless photo.album.nil?
+    .flexbox
+      %p
+        = t('pictures.by')
+        = (link_to photo.user.username, user_path(photo.user))
+      .mdl-layout-spacer
+      - if photo.album != nil
+        %p
+          = t('albums.from')
+          = (link_to  photo.album.title, photo.album)
   .mdl-layout-spacer
   - if photo.user == current_user
     .mdl-card__actions.mdl-card--border

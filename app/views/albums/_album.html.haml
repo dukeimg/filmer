@@ -10,5 +10,3 @@
     - if album.private?
       .mdl-layout-spacer
       %i= t('pictures.hidden')
-  .mdl-card__supporting-text
-    %p= t('albums.of') + ' ' + (link_to  album.user.username, album.user)
