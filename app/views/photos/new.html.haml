@@ -5,21 +5,23 @@
       .mdl-color--white.mdl-shadow--2dp
         .mdl-card__title
           .mdl-card__title-text= t('pictures.upload-title')
-        .mdl-card__supporting-text
-          %p=t('pictures.upload-message')
-          = f.label :private, :class => 'mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect' do
-            = f.check_box :private, :class => 'mdl-checkbox__input'
-            %span.mdl-checkbox__label= t('pictures.hide')
-          - if @albums.count != 0
-            .mdl-textfield
-              = f.label :album, t('albums.in_which')
-              = f.select 'album_id', options_from_collection_for_select(@albums, :id, :title) , include_blank: true
-        .mdl-card__actions.mdl-card--border
-          .flexbox.flex-center
-            .mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--accent{:onclick => 'picturesUpload()'}= t('pictures.choose-files')
-            = f.file_field :image, :style => 'visibility: hidden; position: absolute', multiple: true, name: 'photo[image]', id: 'photo_image'
-      .photo__upload-progressbar.flexbox.flex-column.flex-center.mdl-color--white.mdl-shadow--2dp{:style => 'display: none;'}
-        .text-center{:style => 'margin-bottom: 10px;'}
-          %span= t('pictures.uploading')
-        .progress
-          .mdl-progress.mdl-js-progress
+        #input
+          .mdl-card__supporting-text
+            %p=t('pictures.upload-message')
+            = f.label :private, :class => 'mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect' do
+              = f.check_box :private, :class => 'mdl-checkbox__input'
+              %span.mdl-checkbox__label= t('pictures.hide')
+            - if @albums.count != 0
+              .mdl-textfield
+                = f.label :album, t('albums.in_which')
+                = f.select 'album_id', options_from_collection_for_select(@albums, :id, :title) , include_blank: true
+          .mdl-card__actions.mdl-card--border
+            .flexbox.flex-center
+              .mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--accent{:onclick => 'picturesUpload()'}= t('pictures.choose-files')
+              = f.file_field :image, :style => 'visibility: hidden; position: absolute', multiple: true, name: 'photo[image]', id: 'photo_image'
+        #progress
+          .photo__upload-progressbar.flexbox.flex-column.flex-center.mdl-color--white.mdl-shadow--2dp{:style => 'display: none;'}
+            .text-center{:style => 'margin-bottom: 10px;'}
+              %span= t('pictures.uploading')
+            .progress
+              .mdl-progress.mdl-js-progress

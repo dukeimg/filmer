@@ -1,5 +1,6 @@
 root = exports ? this
 uploader = '<div class="flexbox flex-center"><div class="mdl-spinner mdl-js-spinner is-active" style="width: 150px; height: 150px"></div></div>'
+input = $('#input')
 
 root.picturesUpload = ->
   $('#photo_image').click().fileupload
@@ -7,13 +8,18 @@ root.picturesUpload = ->
     type: 'POST'
     autoUpload: 'true'
     start: (e, data) ->
-      $('.photo__upload-progressbar').fadeIn('slow')
+      $('#input').fadeOut('fast', ->
+        $('.photo__upload-progressbar').fadeIn('fast')
+        return)
       componentHandler.upgradeDom()
     progressall: (e, data) ->
       progress = parseInt(data.loaded / data.total * 100, 10)
       $('.progressbar').css('width', progress + '%')
-      if progress == 100
-        $('.photo__upload-progressbar').fadeOut('slow') if progress == 100
+    stop: (e, data) ->
+      $('.photo__upload-progressbar').fadeOut('fast', ->
+        $('#input').fadeIn('fast')
+        return)
+      componentHandler.upgradeDom()
   return
 
 jQuery ->
