@@ -88,7 +88,7 @@ class PhotosController < ApplicationController
   end
 
   def photo_params_update
-    params.require(:photo).permit(:title, :description, :private)
+    params.require(:photo).permit(:title, :description, :private, :album_id)
   end
 
   def check_photo(photo)

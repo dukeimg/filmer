@@ -24,6 +24,7 @@
               %span.mdl-checkbox__label= t('pictures.hidden')
           - if @albums.count != 0
             .mdl-textfield
-              = p.select :album
+              = p.label :album, t('albums.in_which')
+              = p.select 'album_id', options_from_collection_for_select(@albums, :id, :title) , include_blank: true
           .mdl-card__actions
             = p.submit t('save'), :class => 'mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent'
