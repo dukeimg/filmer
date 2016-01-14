@@ -7,6 +7,14 @@ class RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.for(:account_update).push(:name, :surname, :email, :avatar)
   end
 
+  def destroy
+    @user = current_user
+    @user.albums.destroy_all
+    @user.photos.destroy_all
+    @user.destroy
+    redirect_to root_path
+  end
+
   protected
 
   def after_update_path_for(resource)

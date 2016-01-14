@@ -28,15 +28,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
-    @user = User.find_by_id(params[:id])
-    @user.albums.destroy_all
-    @user.photos.destroy_all
-    if @user.destroy
-      redirect_to root_path
-    end
-  end
-
   private
 
   def user_params

@@ -74,10 +74,13 @@ class PhotosController < ApplicationController
 
   def destroy_all
     @photos = current_user.photos
-    redirect_to dashboard_path, notice: 'It will take a time'
+    @albums = current_user.albums
     Thread.new do
       @photos.destroy_all
+      @photos.delete_all
+      @albums.destroy_all
     end
+    redirect_to dashboard_path, notice: 'It will take a time'
   end
 
   private
