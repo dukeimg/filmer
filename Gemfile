@@ -77,3 +77,6 @@ gem 'aws-sdk-v1'
 gem 'figaro'
 gem 'net-ssh'
 gem 'will_paginate'
+
+#React
+gem 'react-rails'
