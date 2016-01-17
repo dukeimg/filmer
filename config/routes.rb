@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: {registrations: 'registrations', sessions: 'sessions'}
   get 'about' => 'pages#about', as: :about
   get 'dashboard'=> 'pages#dashboard'

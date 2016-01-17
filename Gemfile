@@ -25,17 +25,6 @@ gem 'turbolinks'
 gem 'jquery-turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -61,22 +50,23 @@ end
 gem 'haml'
 gem 'font-awesome-sass'
 gem 'http_accept_language'
-
-#Heroku
-gem 'rails_12factor', group: :production
-
-gem 'breadcrumbs_on_rails'
-gem 'thin'
-
-#Devise
-gem 'devise'
-
 gem 'paperclip'
 gem 'autoprefixer-rails'
 gem 'aws-sdk-v1'
 gem 'figaro'
 gem 'net-ssh'
 gem 'will_paginate'
+gem 'breadcrumbs_on_rails'
+gem 'thin'
 
-#React
+# Heroku
+gem 'rails_12factor', group: :production
+
+# Devise
+gem 'devise'
+
+# React
 gem 'react-rails'
+
+# Admin
+gem 'rails_admin'
