@@ -8,6 +8,7 @@ Currently it uses:
 * Rails 4.2.5
 * Material Design Lite
 * Devise
+* React
 
 # How to try it localy
 
@@ -27,13 +28,13 @@ to use Filmer with your database
 8. Go to
     `config/application.yml`
 and add following:
-
+<code>
     S3_BUCKET_NAME: 'Your value here'
     AWS_ACCESS_KEY_ID: 'Your value here'
     AWS_SECRET_ACCESS_KEY: 'Your value here'
     email: 'Email for mailer in production'
     password: 'password for mailer in production'
-
+</code>
 9. If using postgresql, run
     `rake db:create:all`
 10. Run
