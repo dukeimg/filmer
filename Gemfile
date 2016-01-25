@@ -65,8 +65,8 @@ gem 'rails_12factor', group: :production
 # Devise
 gem 'devise'
 
-# React
-gem 'react-rails'
+# Angular
+gem 'angularjs-rails'
 
 # Admin
 gem 'rails_admin'

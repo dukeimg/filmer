@@ -18,9 +18,7 @@
 //= require jquery-fileupload/vendor/tmpl
 //= require jquery.Jcrop
 //= require turbolinks
-//= require react
-//= require react_ujs
-//= require components
+//= require angular
 //= require_tree .
 
 
