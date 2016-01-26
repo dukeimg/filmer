@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users, controllers: {registrations: 'registrations', sessions: 'sessions'}
+  devise_for :users, components: {registrations: 'registrations', sessions: 'sessions'}
   get 'about' => 'pages#about', as: :about
   get 'dashboard'=> 'pages#dashboard'
   get 'avatar_popup' => 'users#avatar_popup'
-  resources :users, :films, :photos, :albums
+  resources :users, :films, :photos, :albums, :comments
   delete 'destroy_all_photos' => 'photos#destroy_all'
   delete 'destroy_all_albums' => 'albums#destroy_all'
   authenticated :user do

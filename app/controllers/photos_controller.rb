@@ -18,6 +18,12 @@ class PhotosController < ApplicationController
   def show
     @photo = Photo.find_by_id(params[:id])
     check_photo(@photo)
+    @comments = @photo.comments
+
+    respond_to do |format|
+      format.html
+      format.json {render :layout => false}
+    end
   end
 
   def edit

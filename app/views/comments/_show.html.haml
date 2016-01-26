@@ -1,0 +1,14 @@
+// This view should be wrapped into .mdl-card with 'ng-controller' => 'commentsList as comments' attribute outside
+.mdl-card__supporting-text{'ng-repeat' => 'comment in commentsCtrl.response', 'ng-show' => 'commentsCtrl.response.length'}
+  .mdl-grid
+    .mdl-cell.mdl-cell--1-col
+      .comment__upvotes
+        %i.material-icons{:style => 'font-size: 39px'} thumb_up
+        .comment__upvotes--value
+          %b= '{{ comment.upvotes }}'
+    .mdl-cell.mdl-cell--11-col-desktop.mdl-cell--7-col-tablet.mdl-cell--3-col-phone
+      = link_to '#' do
+        %img.avatar{:src => '/images/thumb/missing.png'}
+        %strong.comment__author-name= '{{ comment.author }}'
+      %p.comment__body= '{{ comment.body }}'
+= render ('comments/new')
