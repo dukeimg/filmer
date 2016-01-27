@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20160126140200) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
+    t.integer  "upvotes"
     t.integer  "user_id"
     t.integer  "commentable_id"
     t.string   "commentable_type"

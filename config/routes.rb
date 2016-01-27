@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about', as: :about
   get 'dashboard'=> 'pages#dashboard'
   get 'avatar_popup' => 'users#avatar_popup'
-  resources :users, :films, :photos, :albums, :comments
+  resources :films, :photos, :albums do
+    resources :comments, only: :create
+  end
+  resources :users
   delete 'destroy_all_photos' => 'photos#destroy_all'
   delete 'destroy_all_albums' => 'albums#destroy_all'
   authenticated :user do

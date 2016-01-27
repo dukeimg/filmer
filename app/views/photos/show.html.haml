@@ -20,5 +20,5 @@
         .mdl-card__actions.mdl-card--border
           = link_to t('edit'), edit_photo_path(@photo), :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'
           = link_to t('delete'), photo_path(@photo), :remote => true, :method => 'delete', :class => 'mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect'
-    .mdl-card-lg-stretch.mdl-shadow--2dp.mdl-color--white.container-margin{'ng-controller' => 'CommentsController as commentsCtrl'}
+    .mdl-card-lg-stretch.mdl-shadow--2dp.mdl-color--white.container-margin{'ng-controller' => 'CommentsController as commentsCtrl', 'ng-init' => "init(#{@photo.id})"}
       = render ('comments/show')

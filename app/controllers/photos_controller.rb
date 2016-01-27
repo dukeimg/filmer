@@ -19,6 +19,7 @@ class PhotosController < ApplicationController
     @photo = Photo.find_by_id(params[:id])
     check_photo(@photo)
     @comments = @photo.comments
+    @comment = @photo.comments.new
 
     respond_to do |format|
       format.html
@@ -59,7 +60,7 @@ class PhotosController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.js {render :layout => false}
+      format.js {render :json => false}
     end
   end
 

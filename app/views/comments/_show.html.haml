@@ -1,5 +1,5 @@
 // This view should be wrapped into .mdl-card with 'ng-controller' => 'commentsList as comments' attribute outside
-.mdl-card__supporting-text{'ng-repeat' => 'comment in commentsCtrl.response', 'ng-show' => 'commentsCtrl.response.length'}
+.mdl-card__supporting-text{'ng-repeat' => 'comment in commentsCtrl.comments', 'ng-show' => 'commentsCtrl.comments.length'}
   .mdl-grid
     .mdl-cell.mdl-cell--1-col
       .comment__upvotes
@@ -7,8 +7,8 @@
         .comment__upvotes--value
           %b= '{{ comment.upvotes }}'
     .mdl-cell.mdl-cell--11-col-desktop.mdl-cell--7-col-tablet.mdl-cell--3-col-phone
-      = link_to '#' do
-        %img.avatar{:src => '/images/thumb/missing.png'}
+      = link_to '{{ comment.linkToUser }}' do
+        %img.avatar{:src => '{{ comment.userAvatar }}'}
         %strong.comment__author-name= '{{ comment.author }}'
       %p.comment__body= '{{ comment.body }}'
 = render ('comments/new')

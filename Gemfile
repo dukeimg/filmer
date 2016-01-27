@@ -31,9 +31,9 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  #gem 'ffaker'
-  #gem 'shoulda-matchers'
-  #gem 'pry-byebug'
+  # gem 'ffaker'
+  # gem 'shoulda-matchers'
+  # gem 'pry-byebug'
 end
 
 group :development do
