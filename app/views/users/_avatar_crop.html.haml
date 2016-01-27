@@ -7,7 +7,7 @@
     .flexbox.flex-center{:style => 'padding-bottom: 16px'}
       =image_tag current_user.avatar.url(:preview), :class => 'img-responsive', :id => 'cropbox'
   .mdl-card__actions.mdl-card--border
-    =form_for current_user do |f|
+    =form_for @user do |f|
       -for attribute in [:crop_x, :crop_y, :crop_w, :crop_h]
         = f.hidden_field attribute, :id => attribute
       = f.submit t('save'), :class => 'mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent'
@@ -21,7 +21,7 @@
     });
 
     function update_crop(coords) {
-      var ratio = #{current_user.avatar_geometry(:original).width / current_user.avatar_geometry(:preview).width}
+      var ratio = #{@user.avatar_geometry(:original).width / @user.avatar_geometry(:preview).width}
       $('#crop_x').val(Math.round(coords.x * ratio));
       $('#crop_y').val(Math.round(coords.y * ratio));
       $('#crop_h').val(Math.round(coords.h * ratio));
