@@ -1,4 +1,4 @@
-app = angular.module('filmer', ['comments'])
+angular.module('filmer', ['templates'])
 
 $ ->
   angular.bootstrap(document.body, ['filmer'])

@@ -67,6 +67,10 @@ gem 'devise'
 
 # Angular
 gem 'angularjs-rails'
+gem 'angular-rails-templates'
+gem 'sprockets', '2.12.3'
+gem 'angular-ui-router-rails'
+
 
 # Admin
 gem 'rails_admin'

@@ -2,6 +2,11 @@
   background-color: #EEE;
 }
 
+.comment {
+  font-size: 14px;
+  line-height: 25px;
+}
+
 .comment__textarea {
   flex-grow: 1;
 
@@ -14,19 +19,14 @@
   margin-left: 10px;
 }
 
+.comment__author-avatar {
+  float: left;
+}
+
 .comment__body {
   margin: 10px 0 0 10px;
 }
 
 .comment__upvotes {
-  font-size: 39px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  flex-shrink: 0;
-
-  .comment__upvotes--value {
-    margin-top: 15px;
-  }
+  margin-left: 60px;
 }

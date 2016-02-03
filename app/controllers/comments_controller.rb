@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+
   def create
     @parent = parent
     @comment = @parent.comments.new(comment_params)

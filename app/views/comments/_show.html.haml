@@ -1,14 +1,13 @@
 // This view should be wrapped into .mdl-card with 'ng-controller' => 'commentsList as comments' attribute outside
-.mdl-card__supporting-text{'ng-repeat' => 'comment in commentsCtrl.comments', 'ng-show' => 'commentsCtrl.comments.length'}
+%script
+  = render 'comments/commentsService.js.erb'
+.mdl-card__supporting-text{'ng-repeat' => 'comment in CommentsController.comments', 'ng-show' => 'CommentsController.comments.length'}
   .mdl-grid
-    .mdl-cell.mdl-cell--1-col
-      .comment__upvotes
-        %i.material-icons{:style => 'font-size: 39px'} thumb_up
-        .comment__upvotes--value
-          %b= '{{ comment.upvotes }}'
-    .mdl-cell.mdl-cell--11-col-desktop.mdl-cell--7-col-tablet.mdl-cell--3-col-phone
+    .mdl-cell.mdl-cell--12-col.comment
       = link_to '{{ comment.linkToUser }}' do
-        %img.avatar{:src => '{{ comment.userAvatar }}'}
+        %img.avatar.comment__author-avatar{:src => '{{ comment.userAvatar }}'}
         %strong.comment__author-name= '{{ comment.author }}'
-      %p.comment__body= '{{ comment.body }}'
+        %br
+      %span.comment__body
+        = '{{ comment.body }}'
 = render ('comments/new')

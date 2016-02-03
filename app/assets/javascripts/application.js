@@ -19,8 +19,8 @@
 //= require jquery.Jcrop
 //= require turbolinks
 //= require angular
-//= require angular-resource
-//= require angular-route
+//= require angular-rails-templates
+//= require angular-ui-router
 //= require_tree .
 
 

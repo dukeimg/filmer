@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   get 'dashboard'=> 'pages#dashboard'
   get 'avatar_popup' => 'users#avatar_popup'
   resources :films, :photos, :albums do
-    resources :comments, only: :create
+    resources :comments do
+      member do
+        put '/upvote' => 'comments#upvote'
+      end
+    end
   end
   resources :users
   delete 'destroy_all_photos' => 'photos#destroy_all'
