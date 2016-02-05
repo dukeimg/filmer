@@ -9,7 +9,6 @@ json.array! @comments.reverse.drop(1).reverse do |comment|
   json.body comment.body
   json.upvotes comment.upvotes
   json.linkToUser user_path(@user)
-  json.userAvatar @user.avatar.url(:thumb)
-
+  json.authorAvatar @user.avatar.url(:thumb)
 
 end

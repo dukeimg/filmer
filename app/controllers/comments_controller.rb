@@ -1,5 +1,13 @@
 class CommentsController < ApplicationController
 
+  respond_to :json
+
+  def index
+    @parent = parent
+    @comments = @parent.comments
+    @comment = @parent.comments.new
+  end
+
   def create
     @parent = parent
     @comment = @parent.comments.new(comment_params)

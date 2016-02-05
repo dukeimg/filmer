@@ -1,11 +1,9 @@
 // This view should be wrapped into .mdl-card with 'ng-controller' => 'commentsList as comments' attribute outside
-%script
-  = render 'comments/commentsService.js.erb'
-.mdl-card__supporting-text{'ng-repeat' => 'comment in CommentsController.comments', 'ng-show' => 'CommentsController.comments.length'}
+.mdl-card__supporting-text{'ng-repeat' => 'comment in comments', 'ng-show' => 'comments.length'}
   .mdl-grid
     .mdl-cell.mdl-cell--12-col.comment
       = link_to '{{ comment.linkToUser }}' do
-        %img.avatar.comment__author-avatar{:src => '{{ comment.userAvatar }}'}
+        %img.avatar.comment__author-avatar{:src => '{{ comment.authorAvatar }}'}
         %strong.comment__author-name= '{{ comment.author }}'
         %br
       %span.comment__body
