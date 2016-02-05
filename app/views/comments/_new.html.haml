@@ -2,11 +2,10 @@
   .mdl-card__title
     .mdl-card__title-text New Comment
   .mdl-card__supporting-text
-    = form_for [@parent, @comment], remote: true,
-     :html =>  {'ng-submit' => 'create(comment)'} do |f|
+    %form{'ng-submit' => 'create(comment)'}
       .flexbox
         .mdl-textfield.mdl-js-textfield.comment__textarea
-          = f.label :body, 'Join the discussion...', :class => 'mdl-textfield__label'
-          = f.text_area :body, class: 'mdl-textfield__input', :rows => 1, 'ng-model' => 'comment.body', :required => true
+          %label.mdl-textfield__label{for: :body} 'Join the discussion...'
+          %textarea.mdl-textfield__input{:name => 'body', :rows => 1, 'ng-model' => 'comment.body', :required => true }
         %button.mdl-button.mdl-js-button.mdl-button--fab.mdl-button--mini-fab.mdl-button--colored{:type => 'submit'}
           %i.material-icons send

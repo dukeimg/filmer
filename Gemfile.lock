@@ -42,6 +42,8 @@ GEM
       sprockets (~> 2)
       tilt
     angular-ui-router-rails (0.2.15)
+    angular_rails_csrf (1.0.4)
+      rails (>= 3, < 5)
     angularjs-rails (1.4.8)
     arel (6.0.3)
     autoprefixer-rails (6.3.1)
@@ -262,6 +264,7 @@ PLATFORMS
 DEPENDENCIES
   angular-rails-templates
   angular-ui-router-rails
+  angular_rails_csrf
   angularjs-rails
   autoprefixer-rails
   aws-sdk-v1

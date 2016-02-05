@@ -70,6 +70,7 @@ gem 'angularjs-rails'
 gem 'angular-rails-templates'
 gem 'sprockets', '2.12.3'
 gem 'angular-ui-router-rails'
+gem 'angular_rails_csrf'
 
 
 # Admin

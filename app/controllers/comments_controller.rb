@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
     @comment = @parent.comments.new(comment_params)
     if @comment.save(comment_params)
       respond_to do |format|
+        format.json {render :nothing => true}
         format.js {render :nothing => true}
       end
     end
