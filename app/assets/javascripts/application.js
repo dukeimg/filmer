@@ -22,6 +22,7 @@
 //= require angular-rails-templates
 //= require angular-ui-router
 //= require angular-resource
+//= require EaselJS
 //= require_tree .
 
 

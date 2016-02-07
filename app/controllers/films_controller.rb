@@ -3,7 +3,5 @@ class FilmsController < ApplicationController
     @film = Film.new
     @photos = current_user.photos.all
     @albums = current_user.albums.all
-
-    render :layout => 'editor'
   end
 end

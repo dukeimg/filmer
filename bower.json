@@ -16,8 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "^1.4.9",
-    "angular-ui-router": "^0.2.17",
-    "AngularDevise": "angular-devise#^1.1.0"
+    "EaselJS": "easeljs#^0.8.2"
   }
 }

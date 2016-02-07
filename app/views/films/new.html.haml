@@ -13,8 +13,10 @@
             =link_to t('users.sign-in'), new_user_session_path, :class => 'mdl-navigation__link'
       .mdl-layout__header-row
     %main.mdl-layout__content
-      #editor
+      #editor{'ng-controller' => 'EditorController'}
         #left
+          #toolbar
+            .tool#picture
+              %i.material-icons photo
         #window
-          #document
-            {{ 'Hello, Angular!' }}
+          %document
