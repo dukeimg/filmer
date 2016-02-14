@@ -8,7 +8,7 @@ Currently it uses:
 * Rails 4.2.5
 * Material Design Lite
 * Devise
-* React
+* AngularJS
 
 # How to try it localy
 
