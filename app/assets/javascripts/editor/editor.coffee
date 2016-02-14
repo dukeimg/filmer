@@ -1,6 +1,9 @@
 angular.module('filmer').controller 'EditorController', ['$scope', ($scope) ->
 
-  $('.tool').draggable({ revert: true })
+  $('.tool').draggable(
+    {
+      revert: true
+    })
 
 ]
 

@@ -19,34 +19,53 @@ angular.module('filmer').directive 'document', ->
       handleResize = () ->
         w = $('#window').width()
         h = $('#window').height()
-        unit = h
 
         stage.canvas.height = h
         stage.canvas.width = w
 
         stage.update()
 
-      # Drops
+      # Drop
 
       getDropType = (e, ui) ->
         switch $('.tool').attr('id')
-          when 'picture' then dropPicture(e, ui)
+          when 'picture' then pictureRender(e, ui)
 
-      dropPicture = (event, ui) ->
+      # Pictures
+
+      pictureRender = (e, ui) ->
+
         canvas = document.getElementById('editorWindow')
-        console.log('dropped')
-        image = new createjs.Bitmap('/images/medium/missing.png')
-        image.x = getMousePos(canvas, event).x
-        image.y = getMousePos(canvas, event).y
-        stage.addChild(image)
 
-        stage.update()
+        coords = {
+          x: getMousePos(canvas, event).x
+          y: getMousePos(canvas, event).y
+        }
+
+        picturePreload = (e, ui) ->
+          queue = new createjs.LoadQueue()
+          queue.on("fileload", dropPicture)
+          queue.loadFile({
+            src: '/images/medium/missing.png'
+            type: createjs.AbstractLoader.IMAGE
+          })
+          return
+
+        dropPicture = (e) ->
+          image = new createjs.Bitmap(e.result)
+          image.x = coords.x
+          image.y = coords.y
+          console.log(image.x, image.y)
+          stage.addChild(image)
+
+          stage.update()
+
+        picturePreload()
 
 
       $('#editorWindow').droppable({
         accept: '.tool'
-        drop: (e, ui) ->
-          getDropType(e ,ui)
+        drop: getDropType
       })
 
       # initialization
