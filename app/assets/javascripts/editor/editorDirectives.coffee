@@ -13,6 +13,7 @@ angular.module('filmer').directive 'document', ->
     drawEditor = (scope, element, attribute) ->
 
       stage = new createjs.Stage('editorWindow')
+      createjs.Touch.enable(stage) # touch support
 
       # Window resize
 
