@@ -14,9 +14,9 @@ angular.module('filmer').directive 'document', ->
 
       stage = new createjs.Stage('editorWindow')
 
-      # Resize
+      # Window resize
 
-      handleResize = () ->
+      handleWindowResize = () ->
         w = $('#window').width()
         h = $('#window').height()
 
@@ -24,6 +24,22 @@ angular.module('filmer').directive 'document', ->
         stage.canvas.width = w
 
         stage.update()
+
+      # Move
+
+      checkOffset = (e) ->
+        this.parent.addChild(this)
+        this.offset = {
+          x: this.x - e.stageX
+          y: this.y - e.stageY
+        }
+
+      handleMove = (e) ->
+        e.target.x = e.stageX + this.offset.x
+        e.target.y = e.stageY + this.offset.y
+        stage.update()
+
+      # Resize
 
       # Drop
 
@@ -55,8 +71,10 @@ angular.module('filmer').directive 'document', ->
           image = new createjs.Bitmap(e.result)
           image.x = coords.x
           image.y = coords.y
-          console.log(image.x, image.y)
+          image.on('mousedown', checkOffset)
+          image.on('pressmove', handleMove)
           stage.addChild(image)
+
 
           stage.update()
 
@@ -70,8 +88,8 @@ angular.module('filmer').directive 'document', ->
 
       # initialization
 
-      window.addEventListener("resize", handleResize)
-      handleResize() #initialization
+      window.addEventListener("resize", handleWindowResize)
+      handleWindowResize() #initialization
 
 
     return {
