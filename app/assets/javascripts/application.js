@@ -10,7 +10,6 @@
 //= require angular-rails-templates
 //= require angular-ui-router
 //= require angular-resource
-//= require fabric.js/dist/fabric
 //= require_tree .
 
 

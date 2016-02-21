@@ -13,7 +13,7 @@ angular.module('filmer').directive 'document', ->
     drawEditor = (scope, element, attribute) ->
       canvas = new fabric.Canvas('editorWindow')
       canvas.backgroundColor = 'rgba(255, 194, 93, 0.4)'
-      console.log(canvas)
+      canvas.allowTouchScrolling = false
 
       # Window resize
 
@@ -53,6 +53,9 @@ angular.module('filmer').directive 'document', ->
           pic.left = coords.x - (pic.width / 2)
           pic.top = coords.y - (pic.height / 2)
           pic.opacity = 1
+          pic.lockUniScaling = true
+          pic.centeredScaling = true
+          pic.centeredRotation = true
           canvas.add(pic)
 
         image = new fabric.Image.fromURL '/images/medium/missing.png', renderPicture
