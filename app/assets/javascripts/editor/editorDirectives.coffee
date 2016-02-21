@@ -1,7 +1,7 @@
 angular.module('filmer').directive 'document', ->
 
     template = () ->
-      '<canvas id="editorWindow" style="background-color: rgba(255, 194, 93, 0.4)" width ="500px" height = "500px"></canvas>'
+      '<canvas id="editorWindow" width ="500px" height = "500px"></canvas>'
 
     getMousePos = (canvas, evt) ->
       rect = canvas.getBoundingClientRect()
@@ -12,6 +12,8 @@ angular.module('filmer').directive 'document', ->
 
     drawEditor = (scope, element, attribute) ->
       canvas = new fabric.Canvas('editorWindow')
+      canvas.backgroundColor = 'rgba(255, 194, 93, 0.4)'
+      console.log(canvas)
 
       # Window resize
 
