@@ -11,9 +11,7 @@ angular.module('filmer').directive 'document', ->
       }
 
     drawEditor = (scope, element, attribute) ->
-
-      stage = new createjs.Stage('editorWindow')
-      createjs.Touch.enable(stage) # touch support
+      canvas = new fabric.Canvas('editorWindow')
 
       # Window resize
 
@@ -21,77 +19,41 @@ angular.module('filmer').directive 'document', ->
         w = $('#window').width()
         h = $('#window').height()
 
-        stage.canvas.height = h
-        stage.canvas.width = w
+        canvas.setWidth(w)
+        canvas.setHeight(h)
+        canvas.calcOffset()
 
-        stage.update()
-
-      # Move
-
-      checkOffset = (e) ->
-        this.parent.addChild(this)
-        this.offset = {
-          x: this.x - e.stageX
-          y: this.y - e.stageY
-        }
-
-      handleMove = (e) ->
-        e.target.x = e.stageX + this.offset.x
-        e.target.y = e.stageY + this.offset.y
-        stage.update()
-
-      # Resize
+      window.addEventListener("resize", handleWindowResize)
+      handleWindowResize() #initialization
 
       # Drop
 
       getDropType = (e, ui) ->
         switch $('.tool').attr('id')
-          when 'picture' then pictureRender(e, ui)
-
-      # Pictures
-
-      pictureRender = (e, ui) ->
-
-        canvas = document.getElementById('editorWindow')
-
-        coords = {
-          x: getMousePos(canvas, event).x
-          y: getMousePos(canvas, event).y
-        }
-
-        picturePreload = (e, ui) ->
-          queue = new createjs.LoadQueue()
-          queue.on("fileload", dropPicture)
-          queue.loadFile({
-            src: '/images/medium/missing.png'
-            type: createjs.AbstractLoader.IMAGE
-          })
-          return
-
-        dropPicture = (e) ->
-          image = new createjs.Bitmap(e.result)
-          image.x = coords.x
-          image.y = coords.y
-          image.on('mousedown', checkOffset)
-          image.on('pressmove', handleMove)
-          stage.addChild(image)
-
-
-          stage.update()
-
-        picturePreload()
-
+          when 'picture' then dropPicture(e, ui)
 
       $('#editorWindow').droppable({
         accept: '.tool'
         drop: getDropType
       })
 
-      # initialization
+      # Drop Picture
+      dropPicture = (e, ui) ->
 
-      window.addEventListener("resize", handleWindowResize)
-      handleWindowResize() #initialization
+        stage = document.getElementById('editorWindow')
 
+        coords = {
+          x: getMousePos(stage, e).x
+          y: getMousePos(stage, e).y
+        }
+
+        renderPicture = (pic) ->
+          pic.left = coords.x - (pic.width / 2)
+          pic.top = coords.y - (pic.height / 2)
+          pic.opacity = 1
+          canvas.add(pic)
+
+        image = new fabric.Image.fromURL '/images/medium/missing.png', renderPicture
 
     return {
       restrict: 'E',
