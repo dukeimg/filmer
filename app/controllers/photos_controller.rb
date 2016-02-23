@@ -1,6 +1,7 @@
 class PhotosController < ApplicationController
 
   def index
+    @all = current_user.photos.all
     @photos = current_user.photos.paginate(:page => params[:page], per_page: 15).order('created_at DESC')
     @photo = Photo.new
     @albums = current_user.albums
@@ -11,6 +12,7 @@ class PhotosController < ApplicationController
       respond_to do |format|
         format.html
         format.js {render :layout => false}
+        format.json {render :layout => false}
       end
     end
   end
@@ -58,11 +60,11 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo = Photo.create(photo_params)
-
-    respond_to do |format|
-      format.html
-      format.js {render :json => false}
+    if @photo = Photo.create(photo_params)
+      respond_to do |format|
+        format.html
+        format.js {render :layout => false}
+      end
     end
   end
 

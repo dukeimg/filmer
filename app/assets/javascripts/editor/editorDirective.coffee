@@ -31,11 +31,11 @@ angular.module('filmer').directive 'document', ->
       # Drop
 
       getDropType = (e, ui) ->
-        switch $('.tool').attr('id')
+        switch ui.draggable.data('type')
           when 'picture' then dropPicture(e, ui)
 
       $('#editorWindow').droppable({
-        accept: '.tool'
+        accept: '.draggable'
         drop: getDropType
       })
 
@@ -67,3 +67,28 @@ angular.module('filmer').directive 'document', ->
       link: (scope, element, attribute) ->
         drawEditor(scope, element, attribute)
     }
+
+angular.module('filmer').directive 'sidebar', (Resource, $compile) ->
+
+  template = ''
+
+  initSideBar = (s, e, a) ->
+    $(document).on 'click', '#all-photos', ->
+      console.log('clicked')
+      Resource.getAllPhotos().then (result) ->
+        d = result.data
+        pics = for n, pic of d
+          "<div class='draggable slider__picture' id='photo-#{n}' style='background: url(#{pic.thumb}) center / cover'></div>"
+        template = "<div class='slider__button-back' id='button-back__all-photos'><i class='material-icons'>arrow_back</i>" +
+            "<span>Back</span></div>" +
+            pics
+        $('#slider-pictures').empty().removeClass('slider-pictures')
+        $('#slider-pictures').append(template)
+
+  return {
+    restrict: 'E',
+    template: template,
+    scope: {},
+    link: (scope, element, attributes) ->
+      initSideBar(scope, element, attributes)
+  }

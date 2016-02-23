@@ -1,52 +1,3 @@
-// Place all the styles related to the films controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-#loading {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-
-  &.loading-colors {
-    box-shadow: 2px 0 50px 0 #777777;
-  }
-
-  &.color-1 {
-    background-color: #f04155;
-  }
-  &.color-2 {
-    background-color: #39b8f7;
-  }
-  &.color-3 {
-    background-color: #6932d9;
-  }
-
-  .container-fluid {
-    z-index: 4;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    color: white;
-
-    h1 {
-      font-size: 5vw;
-      font-family: 'Classica Two';
-    }
-
-    h2 {
-      padding-left: 10%;
-      margin-top: -1%;
-      font-size: 2vh;
-    }
-  }
-}
-
 #editor {
   display: flex;
   width: auto;
@@ -82,7 +33,7 @@
   height: 100%;
 }
 
-#toolbar {
+sidebar {
   padding: 50px;
   width: 150px;
   display: flex;
@@ -92,10 +43,67 @@
 .tool {
   width: 50px;
   height: 50px;
-  cursor: move;
+  cursor: pointer;
   user-select: none;
 
   .material-icons {
     font-size: 50px;
+  }
+}
+
+.slider {
+  position: absolute;
+  top: 128px;
+  left: -250px;
+  height: calc(100% - 128px);
+  width: 250px;
+  background: #fafafa;
+  overflow: auto;
+}
+
+.slider__picture {
+  margin: 20px;
+  width: 210px;
+  height: 150px;
+  display: flex;
+  flex-direction: column-reverse;
+  cursor: pointer;
+}
+
+.slider__picture-title {
+  height: 30px;
+  background-color: rgba(17, 17, 17, 0.61);
+  color: #eeeeee;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider__button-back {
+  color: $primary_color;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  span {
+    padding-top: 2px;
+  }
+}
+
+.slider-pictures {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .mdl-spinner {
+    width: 84px;
+    height: 84px;
+  }
+
+  .mdl-spinner__circle {
+    border-width: 9px;
   }
 }

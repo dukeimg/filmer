@@ -1,0 +1,17 @@
+.slider__button-back#button-back
+  %i.material-icons arrow_back
+  %span Back
+- if @photos.count != 0
+  .slider__picture#all-photos{:style => "background: url('#{@photos.last.image(:thumb)}') center / cover"}
+    .slider__picture-title
+      .slider__picture-title-text All Photos
+  - if @albums.count != 0
+    - @albums.each do |a|
+      - if a.photos.count != 0
+        .slider__picture{:style => "background: url('#{a.photos.last.image(:thumb)}') center / cover"}
+          .slider__picture-title
+            .slider__picture-title-text= a.title
+  - else
+- else
+
+// 'data-type' => 'picture'

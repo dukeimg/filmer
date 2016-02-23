@@ -20,6 +20,7 @@ class AlbumsController < ApplicationController
     respond_to do |format|
       format.html
       format.js {render :layout => false}
+      format.json {render :layout => false}
     end
   end
 
