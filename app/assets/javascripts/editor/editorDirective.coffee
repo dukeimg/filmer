@@ -74,16 +74,24 @@ angular.module('filmer').directive 'sidebar', (Resource, $compile) ->
 
   initSideBar = (s, e, a) ->
     $(document).on 'click', '#all-photos', ->
-      console.log('clicked')
       Resource.getAllPhotos().then (result) ->
         d = result.data
         pics = for n, pic of d
-          "<div class='draggable slider__picture' id='photo-#{n}' style='background: url(#{pic.thumb}) center / cover'></div>"
+          "<div class='draggable slider__picture' id='photo-#{n}' data-type='picture' style='background: url(#{pic.thumb}) center / cover'></div>"
         template = "<div class='slider__button-back' id='button-back__all-photos'><i class='material-icons'>arrow_back</i>" +
             "<span>Back</span></div>" +
-            pics
+            pics.join ''
         $('#slider-pictures').empty().removeClass('slider-pictures')
         $('#slider-pictures').append(template)
+        $('.draggable').draggable(
+          {
+            revert: true
+            appendTo: 'body'
+            containment: 'window'
+            scroll: false
+            zIndex: 100
+            helper: 'clone'
+          })
 
   return {
     restrict: 'E',
