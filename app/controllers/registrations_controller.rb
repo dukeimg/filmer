@@ -1,11 +1,5 @@
 # Fix "unpermitted parameters"  devise & rails 4 strong parameters issue
 class RegistrationsController < Devise::RegistrationsController
-  before_filter :configure_permitted_parameters
-
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up).push(:name, :surname, :username, :email, :avatar)
-    devise_parameter_sanitizer.for(:account_update).push(:name, :surname, :email, :avatar)
-  end
 
   def destroy
     @user = current_user
@@ -28,4 +22,5 @@ class RegistrationsController < Devise::RegistrationsController
   def after_inactive_sign_up_path_for(resource)
     new_user_session_path
   end
+
 end
