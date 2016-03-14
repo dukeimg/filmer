@@ -50,15 +50,17 @@ angular.module('filmer').directive 'document', ->
         }
 
         renderPicture = (pic) ->
-          pic.left = coords.x - (pic.width / 2)
-          pic.top = coords.y - (pic.height / 2)
           pic.opacity = 1
           pic.lockUniScaling = true
           pic.centeredScaling = true
           pic.centeredRotation = true
+          pic.scaleX = 500 / pic.width
+          pic.scaleY = 500 / pic.width
+          pic.left = coords.x - (pic.width * pic.scaleX / 2)
+          pic.top = coords.y - (pic.height * pic.scaleY / 2)
           canvas.add(pic)
 
-        image = new fabric.Image.fromURL '/images/medium/missing.png', renderPicture
+        image = new fabric.Image.fromURL ui.draggable.attr("data-source"), renderPicture
 
     return {
       restrict: 'E',
@@ -77,7 +79,7 @@ angular.module('filmer').directive 'sidebar', (Resource, $compile) ->
       Resource.getAllPhotos().then (result) ->
         d = result.data
         pics = for n, pic of d
-          "<div class='draggable slider__picture' id='photo-#{n}' data-type='picture' style='background: url(#{pic.thumb}) center / cover'></div>"
+          "<div class='draggable slider__picture' id='photo-#{n}' data-type='picture' data-source='#{pic.original}' style='background: url(#{pic.thumb}) center / cover'></div>"
         template = "<div class='slider__button-back' id='button-back__all-photos'><i class='material-icons'>arrow_back</i>" +
             "<span>Back</span></div>" +
             pics.join ''
