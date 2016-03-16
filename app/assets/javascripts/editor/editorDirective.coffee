@@ -70,7 +70,7 @@ angular.module('filmer').directive 'document', ->
         drawEditor(scope, element, attribute)
     }
 
-angular.module('filmer').directive('sidebar', (Resource, $compile) ->
+angular.module('filmer').directive 'sidebar', ['Resource', '$compile', (Resource, $compile) ->
 
   template = ''
 
@@ -101,4 +101,5 @@ angular.module('filmer').directive('sidebar', (Resource, $compile) ->
     scope: {},
     link: (scope, element, attributes) ->
       initSideBar(scope, element, attributes)
-  }).$inject = ['Resource', '$complie']
+    }
+]
