@@ -70,13 +70,13 @@ angular.module('filmer').directive 'document', ->
         drawEditor(scope, element, attribute)
     }
 
-angular.module('filmer').directive 'sidebar', ['Resource', (Resource) ->
+angular.module('filmer').directive 'sidebar', ['SidebarService', (SidebarService) ->
 
   template = ''
 
   initSideBar = (s, e, a) ->
     $(document).on 'click', '#all-photos', ->
-      Resource.getAllPhotos().then (result) ->
+      SidebarService.getAllPhotos().then (result) ->
         d = result.data
         pics = for n, pic of d
           "<div class='draggable slider__picture' id='photo-#{n}' data-type='picture' data-source='#{pic.original}' style='background: url(#{pic.thumb}) center / cover'></div>"

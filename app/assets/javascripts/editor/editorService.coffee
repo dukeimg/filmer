@@ -1,4 +1,4 @@
-angular.module('filmer').factory 'Resource',  ($http) ->
+angular.module('filmer').factory 'SidebarService',  ($http) ->
   Resource = {}
 
   Resource.getAllPhotos = () ->
