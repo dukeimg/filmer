@@ -70,7 +70,7 @@ angular.module('filmer').directive 'document', ->
         drawEditor(scope, element, attribute)
     }
 
-angular.module('filmer').directive 'sidebar', ['Resource', '$compile', (Resource, $compile) ->
+angular.module('filmer').directive 'sidebar', ['Resource', (Resource) ->
 
   template = ''
 
